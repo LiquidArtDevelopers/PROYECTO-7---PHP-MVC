@@ -36,7 +36,9 @@ $arrayRutasGet = [
 // 2) COMO TODAS LAS PETICIONES LLEGAN AL INDEX.PHP (POR REDIRECCIONAMIENTO DEL HTACCESS), AQUÍ ANALIZAMOS LA URL POR LA QUE VIENE PARA VER SI ES VÁLIDA O NO Y EN CASO DE SER VÁLIDA, CARGARLE LA VISTA (VIEW) ASIGNADA A ESA URL EN EL ARRAY.
 
 //Obtenemos la url entera desde la raiz del dominio, en caso de fallo, la URL será la raiz
-$url = urldecode($_SERVER["REQUEST_URI"]) ?? "/es";
+$request = urldecode($_SERVER["REQUEST_URI"]) ?? "/es";
+// Extraemos únicamente el path para ignorar los parámetros de consulta
+$url = parse_url($request, PHP_URL_PATH) ?? "/es";
 
 //Si la URL viene finalizada con alguna ruta más allá de "/", por ejemplo "/es", o "/es/servicios", cogemos el urllang (es) y la ruta (servicios)
 if ($url != "/") {
