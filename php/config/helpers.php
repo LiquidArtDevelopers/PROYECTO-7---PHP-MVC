@@ -1,0 +1,22 @@
+<?php
+
+// Función para validar si un correo tiene la forma o estructura de un correo adecuada
+// La función devuelve true si es correcto, o false si no coincide con la expresión regular con la que se compara.
+function validar_email($valorRecibido) {    
+    $regex = '/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/';
+
+    return preg_match($regex, $valorRecibido);
+    // Me devolverá false si hay error
+    // Me devolverá true si NO hay error (si coincide la estructura )
+}
+
+// Función que se ejecuta cuando localizamos un error en el backend del formulario por no cumplimentar algún campo de forma correcta.
+// La función obtiene todos los valores de los campos del formulario a través de los parámetros de entrada, y se encarga de redirigir a la página de contacto con los errores y los campos como query-param en la url.
+function mensaje_error($parametro01, $parametro02, $parametro03, $parametro04, $parametro05, $parametro06){    
+    header("location:../../contacta-con-nosotros.php?campo=$parametro01&error=$parametro02&nombre=$parametro03&tel=$parametro04&email=$parametro05&mensaje=$parametro06");
+    die;
+}
+
+function mensaje_error2($p1, $p2, $p3, $p4, $p5){
+    header("location:../../contacta-con-nosotros.php?campoError=$p1&tipoError=$p2&nombre2=$p3&telefono2=$p4&correo2=$p5");
+}

@@ -1,0 +1,50 @@
+# RewriteEngine On
+
+# # quitamos el wwww
+# RewriteCond %{HTTP_HOST} ^www\.jaramaautoescuela\.com$ [NC]  
+# RewriteRule ^(.*)$ http://jaramaautoescuela.com/$1 [R=301,L]
+
+# # quitanmos la / del final
+# RewriteRule ^(.*)/$ /$1 [R=301,L]
+
+# # que no cuente como url los files y directory
+# RewriteCond %{REQUEST_FILENAME} !-f
+# RewriteCond %{REQUEST_FILENAME} !-d
+
+# #Evitar descarga de archivos en esta carpeta con una redirección 403
+# RedirectMatch 403 ^../App/files/.*$
+
+# # carga ese archivo como enroutador
+# RewriteRule ^ index.php [L,QSA]
+
+
+# # reglas de seguridad de apache
+# <IfModule mod_security2.c>
+# 	SecRuleRemoveById 201 210580 211220 211230 214940 218130
+# </IfModule>
+
+RewriteEngine On
+
+# quitamos el wwww
+RewriteCond %{HTTP_HOST} ^www\.webda\.eus$ [NC]  
+RewriteRule ^(.*)$ http://webdada.eus/$1 [R=301,L]
+
+# quitanmos la / del final
+RewriteRule ^(.*)/$ /$1 [R=301,L]
+
+# que no cuente como url los files y directory
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+#Evitar descarga de archivos en esta carpeta con una redirección 403
+# RedirectMatch 403 ^../App/files/.*$
+
+# carga ese archivo como enroutador
+RewriteRule ^ index.php [L,QSA]
+
+
+# reglas de seguridad de apache
+<IfModule mod_security2.c>
+	SecRuleRemoveById 201 210580 211220 211230 214940 218130
+</IfModule>
+

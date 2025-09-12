@@ -1,0 +1,168 @@
+<?php
+
+include_once "../config/helpers.php";
+
+
+// 01 Recoger los datos enviados por el form
+$nombre = $_POST['nombre'];
+$tel = $_POST['tel'];
+$email = $_POST['email'];
+$mensaje = $_POST['mensaje'];
+
+
+$ip = $_SERVER['REMOTE_ADDR'];
+$fecha = date('Y-m-d h:m:s');
+
+
+// 02 Comprobación (mostrarlos a través de echo para ver que vienen bien)
+// echo $nombre.'<br>';
+// echo $tel.'<br>';
+// echo $email.'<br>';
+// echo $mensaje.'<br>';
+// echo $ip.'<br>';
+// echo $fecha.'<br>';
+
+// 03 Validaciones de campos
+// de que no venga vacío Nombre
+if(empty($nombre)){    
+    mensaje_error("nombre", "vacio", $nombre, $tel, $email, $mensaje);
+}
+// de que no venga vacío el teléfono
+if(empty($tel)){    
+    mensaje_error("telefono", "vacio", $nombre, $tel, $email, $mensaje);
+}
+// de que no venga vacío el correo
+if(empty($email)==true){    
+    mensaje_error("email", "vacio", $nombre, $tel, $email, $mensaje);
+}
+// de que no venga vacío el correo
+if(empty($mensaje)==true){    
+    mensaje_error("mensaje", "vacio", $nombre, $tel, $email, $mensaje);
+}
+
+// de que sea un correo adecuado (con expresiones regulares)
+if(validar_email($email)==false){    
+    mensaje_error("email", "sintaxis", $nombre, $tel, $email, $mensaje);
+}
+
+// Comprobar si el nombre tiene entre 4 y 40 caracteres
+$numeroCaracteres = strlen($nombre);
+if($numeroCaracteres < 3 || $numeroCaracteres > 40){
+    mensaje_error("nombre", "caracteres", $nombre, $tel, $email, $mensaje);
+}
+// Mensaje entre 5 y 200 caractéres.
+$numeroCaracteres = strlen($mensaje);
+if($numeroCaracteres < 5 || $numeroCaracteres > 200){
+    mensaje_error("mensaje", "caracteres", $nombre, $tel, $email, $mensaje);
+}
+
+
+
+
+// 04 envío de correos
+// enviar un correo al usuario que ha escrito
+// Crear el template del correo y darle valor a las variables que necesita phpMailer
+
+// recoger más variables que necesita el phpMailer:correo emisor y el nombre emisor,el correo receptor y su nombre, título del correo
+$correoEmisor ="no-reply@webda.eus"; //debe ser un correo que esté dado de alta en el servidor (webda.eus)
+$nombreEmisor ="Panadería Aginaga";
+$correoDestinatario = $email;
+$nombreDestinatario= $nombre;
+$asunto = "Hemos recibido tu correo, $nombre - Panadería Aginaga";
+$cuerpo='
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>'.$asunto.'</title>
+</head>
+<body align="center" style="padding: 1.5rem;background-color: rgb(255, 227, 227);">
+    <h1>Hemos recibido tu correo, '.$nombre.'</h1>
+    <p>Estos son los datos que hemos recibido en la web de <a href="https://profe.webda.eus/proyecto05/">profe.webda.eus/proyecto05</a> de tu consulta:</p>
+    <table align="center">
+        <tr>
+            <td align="left" style="background-color: white;padding: 0.5rem 1rem;border: 1px solid black">Nombre:</td>
+            <td align="left" style="background-color: white;padding: 0.5rem 1rem;border: 1px solid black">'.$nombre.'</td>
+        </tr>
+        <tr>
+            <td align="left" style="background-color: white;padding: 0.5rem 1rem;border: 1px solid black">Teléfono:</td>
+            <td align="left" style="background-color: white;padding: 0.5rem 1rem;border: 1px solid black">'.$tel.'</td>
+        </tr>
+        <tr>
+            <td align="left" style="background-color: white;padding: 0.5rem 1rem;border: 1px solid black">Correo Electrónico:</td>
+            <td align="left" style="background-color: white;padding: 0.5rem 1rem;border: 1px solid black">'.$email.'</td>
+        </tr>
+        <tr>
+            <td align="left" style="background-color: white;padding: 0.5rem 1rem;border: 1px solid black">Consulta:</td>
+            <td align="left" style="background-color: white;padding: 0.5rem 1rem;border: 1px solid black">'.$mensaje.'</td>
+        </tr>
+    </table>
+
+    <p>Gracias por escribirnos.</p>
+    <p>Equipo de Panadería Agianga</p>
+    <a href="https://profe.webda.eus/proyecto05/">profe.webda.eus/proyecto05</a>
+
+</body> 
+</html>
+';
+include "./envioPhpMailer.php"; //necesite ejecutar el envío de correo.
+
+
+
+// enviar un correo al admin de la web
+// recoger más variables que necesita el phpMailer:correo emisor y el nombre emisor,el correo receptor y su nombre, título del correo
+$correoEmisor ="no-reply@webda.eus";
+$nombreEmisor ="Web Panadería";
+$correoDestinatario = "aranaz@webda.eus";
+$nombreDestinatario= "Admin de la web";
+$asunto = "Has recibido una nueva consulta en la web de $nombre";
+$cuerpo='
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>'.$asunto.'</title>
+</head>
+<body align="center" style="padding: 1.5rem;background-color: rgb(255, 227, 227);">
+    <h1>Has recibido un nuevo mensaje de '.$nombre.'</h1>
+    <p>Estos son los datos que hemos recibido en la web de <a href="https://profe.webda.eus/proyecto05/">profe.webda.eus/proyecto05</a> de la consulta del usuario:</p>
+    <table align="center">
+        <tr>
+            <td align="left" style="background-color: white;padding: 0.5rem 1rem;border: 1px solid black">Nombre:</td>
+            <td align="left" style="background-color: white;padding: 0.5rem 1rem;border: 1px solid black">'.$nombre.'</td>
+        </tr>
+        <tr>
+            <td align="left" style="background-color: white;padding: 0.5rem 1rem;border: 1px solid black">Teléfono:</td>
+            <td align="left" style="background-color: white;padding: 0.5rem 1rem;border: 1px solid black">'.$tel.'</td>
+        </tr>
+        <tr>
+            <td align="left" style="background-color: white;padding: 0.5rem 1rem;border: 1px solid black">Correo Electrónico:</td>
+            <td align="left" style="background-color: white;padding: 0.5rem 1rem;border: 1px solid black">'.$email.'</td>
+        </tr>
+        <tr>
+            <td align="left" style="background-color: white;padding: 0.5rem 1rem;border: 1px solid black">Consulta:</td>
+            <td align="left" style="background-color: white;padding: 0.5rem 1rem;border: 1px solid black">'.$mensaje.'</td>
+        </tr>
+    </table>
+
+    <p>Un saludo</p>
+    <p>Equipo de Panadería Agianga</p>
+    <a href="https://profe.webda.eus/proyecto05/">profe.webda.eus/proyecto05</a>
+
+</body> 
+</html>
+';
+include "./envioPhpMailer.php";
+
+
+
+// 05 Redirección a la página de gracias.php
+header("location:../../gracias.php?nombre=$nombre");
+
+
+
+
+?>
+
