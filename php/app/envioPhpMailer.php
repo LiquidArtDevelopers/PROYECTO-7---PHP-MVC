@@ -14,10 +14,10 @@ $mail = new PHPMailer(true);
 try {
     $mail->SMTPDebug = 0;                                       
     $mail->isSMTP();
-    $mail->Host='webda-eus.correoseguro.dinaserver.com'; /* modificar */                
+    $mail->Host=''; /* modificar */                
     $mail->SMTPAuth   = true;                        
-    $mail->Username = 'no-reply@webda.eus'; /* modificar */              
-    $mail->Password = 'Areafor@2025'; /* modificar */                       
+    $mail->Username = ''; /* modificar */              
+    $mail->Password = ''; /* modificar */                       
     $mail->SMTPSecure = 'ssl';                              
     $mail->Port = 465;  
   
