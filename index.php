@@ -3,10 +3,13 @@
 require_once "./php/config/helpers.php";
 
 
-// 0) ARRAY DE LENGUAJES PERMITIDOS
-$langs=['es', 'eu'];
+// FASE 1 - CONFIGURAMOS LOS IDIOMAS Y RUTAS PERMITIDAS
+// A CADA RUTA PERMITIDA LE ASIGNAMOS LA UBICACIÓN DEL ARCHIVO QUE TIENE SU CONTENIDO
 
-// 1) DOBLE ARRAY (ASOCIATIVO Y NORMAL) DE RUTAS PERMITIDAS
+// Array de idiomas permitidos
+$langs = ['es', 'eu', 'en'];
+
+//Array asociativo (3 nieveles) para determinar las url permitidas y asociarles el recurso de la vista que corresponda
 $arrayRutasGet = [
     'es' => [
         '/es' => [
@@ -18,6 +21,9 @@ $arrayRutasGet = [
         '/es/servicios' => [
             'view'      => '/php/views/es/servicios.php'
         ],
+        '/es/contacto' => [
+            'view'      => '/php/views/es/contacto.php'
+        ]
     ],
     'eu' => [
         '/eu' => [
@@ -29,23 +35,48 @@ $arrayRutasGet = [
         '/eu/serbitzuak' => [
             'view'      => '/php/views/eu/servicios.php'
         ],
+        '/eu/kontaktua' => [
+            'view'      => '/php/views/eu/contacto.php'
+        ]
+    ],
+    'en' => [
+        '/en' => [
+            'view'      => '/php/views/en/inicio.php'
+        ],
+        '/en/about-us' => [
+            'view'      => '/php/views/en/quienesSomos.php'
+        ],
+        '/en/services' => [
+            'view'      => '/php/views/en/servicios.php'
+        ],
+        '/en/contact' => [
+            'view'      => '/php/views/en/contacto.php'
+        ]
     ]
 ];
 
 
-// 2) COMO TODAS LAS PETICIONES LLEGAN AL INDEX.PHP (POR REDIRECCIONAMIENTO DEL HTACCESS), AQUÍ ANALIZAMOS LA URL POR LA QUE VIENE PARA VER SI ES VÁLIDA O NO Y EN CASO DE SER VÁLIDA, CARGARLE LA VISTA (VIEW) ASIGNADA A ESA URL EN EL ARRAY.
+// FASE 2 - COMO TODAS LAS PETICIONES LLEGAN AL INDEX.PHP (POR ACCIÓN DEL HTACCESS), AQUÍ ANALIZAMOS LA URL POR LA QUE VIENE PARA VER SI ES VÁLIDA O NO Y EN CASO DE SER VÁLIDA, CARGARLE LA VISTA (VIEW) ASIGNADA A ESA URL EN EL ARRAY.
 
-//Obtenemos la url entera desde la raiz del dominio, en caso de fallo, la URL será la raiz
+//Obtenemos la url entera desde la raiz
+// Ejemplo: "/es/contacto?id=10"
 $request = urldecode($_SERVER["REQUEST_URI"]) ?? "/es";
 // Extraemos únicamente el path para ignorar los parámetros de consulta
+// ejemplo: "/es/contacto"
 $url = parse_url($request, PHP_URL_PATH) ?? "/es";
 
-//Si la URL viene finalizada con alguna ruta más allá de "/", por ejemplo "/es", o "/es/servicios", cogemos el urllang (es) y la ruta (servicios)
+// Compruebo que $url no sea un "/", sino que sea otras url como "/es/contacto"
 if ($url != "/") {
-    $url = rtrim($url, "/");  
+    // quito la "/" del final en caso de que la tenga
+    // Ejemplo: Si $url es "/es/contacto/" me quita "/" del final, es decir, me dehja $url en "/es/contacto"
+    $url = rtrim($url, "/");
+    // De $url me divide y extrae todos los valores teniendo la "/" como divisor.
+    // Ejemplo: en $urlParse tengo un array con estos valores ["", "es", "contacto"] ya que $url es "/es/contacto"
+    // Ejemplo si fuese $url "/es", entonces el array sería ["", "es"]
     $urlParse = explode("/", $url);
+    // Metemos dentro de $lang, el valor del array enb la posición 1, que es donde está el idioma. El arrat cuenta sus items empezando desde el 0, por lo tanto en el array ["", "es", "contacto"], la posición 1 es "es"
     $lang = $urlParse[1];
-    $ruta = $urlParse[count($urlParse) - 1];    
+    // Obtener $lang me sirve para determinar en qué carpeta tengo que buscar $view, que es la vista del contenido que se cargará.
 } else {
     // Si la ruta termina viene vacía como "/", redirigimos a la ruta principal con el idioma principal para que venga como "/es"
     header("HTTP/1.1 301 Moved Permanently");
@@ -53,30 +84,27 @@ if ($url != "/") {
     exit;
 }
 
-//Si no existe el idioma extraido de la URL dentro del array de idiomas permitidos, redirigimos al idioma principal
-if (!in_array($lang, $langs)) {    
+
+// Una barrera para contener que si el usuario ha metido a mano o la url viene con un $lang que no se contempla en el array, le redirijamos a la página de inicio, pero con el idioma que queramos por defecto,
+if (!in_array($lang, $langs)) {
     header("HTTP/1.1 301 Moved Permanently");
     header("Location: /es");
     exit;
 }
 
 
+// FASE 3 - UNA VEZ TENEMOS LA $URL DEL USUARIO, Y TENEMOS EL IDIOMA DE LA URL EN $LANG, COMPROBAMOS SI EXISTE ESA URL EN ESE IDIOMA CONSULTANDO EL ARRAY DE URL
 
-// 2) INCLUDE DEL CONTENIDO (VISTA) CORRESPONDIENTE A LA URL POR LA QUE VIENE EL USUARIO
-
-//Si la ruta amigable está dentro del array de rutas GET permitidas, procedemos
 if (isset($arrayRutasGet[$lang][$url])) {
-       
-    $view = $arrayRutasGet[$lang][$url]['view']; //será el valor con la ruta del archivo que será la vista
+
+    // Si la url existe dentro del array de url's, entonces cogemos el valor de view, que es el archivo que haremos include para cargar el contenido pertienente de esta url.
+    $view = $arrayRutasGet[$lang][$url]['view']; 
     
     //----VISTA----------
-    require_once  __DIR__.$view;
-    
+    require_once  __DIR__ . $view;
 } else {
 
-    
+    // En caso de que $url no exista dentro del array de url permitidas, cargamos el contenido de la 404
     //----VISTA----------
-    require_once __DIR__.'/php/views/404.php';
+    require_once __DIR__ . '/php/views/404.php';
 }
-
-

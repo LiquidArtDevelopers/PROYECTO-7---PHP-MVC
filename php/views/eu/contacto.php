@@ -6,6 +6,6 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>404 - Barkatu, ez dago horria</h1>
+    <h1>Kontaktua horria</h1>
 </body>
 </html>
