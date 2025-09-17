@@ -6,6 +6,6 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Gure buruz horria</h1>
+    <h1>Página Quienes Somos</h1>
 </body>
 </html>

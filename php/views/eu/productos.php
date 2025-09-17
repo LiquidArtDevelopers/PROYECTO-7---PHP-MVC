@@ -6,6 +6,6 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Kontaktua horria</h1>
+    <h1>Página de Servicios</h1>
 </body>
 </html>

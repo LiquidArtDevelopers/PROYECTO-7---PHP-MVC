@@ -7,19 +7,19 @@ require_once "./php/config/helpers.php";
 // A CADA RUTA PERMITIDA LE ASIGNAMOS LA UBICACIÓN DEL ARCHIVO QUE TIENE SU CONTENIDO
 
 // Array de idiomas permitidos
-$langs = ['es', 'eu', 'en', 'fr'];
+$langs = ['es', 'eu'];
 
 //Array asociativo (3 nieveles) para determinar las url permitidas y asociarles el recurso de la vista que corresponda
 $arrayRutasGet = [
     'es' => [
         '/es' => [
-            'view'      => '/php/views/es/inicio.php'
+            'view'      => '/php/views/es/inicio.php' 
         ],
         '/es/sobre-nosotros' => [
             'view'      => '/php/views/es/quienesSomos.php'
         ],
-        '/es/servicios' => [
-            'view'      => '/php/views/es/servicios.php'
+        '/es/productos' => [
+            'view'      => '/php/views/es/productos.php'
         ],
         '/es/contacto' => [
             'view'      => '/php/views/es/contacto.php'
@@ -32,42 +32,13 @@ $arrayRutasGet = [
         '/eu/guri-buruz' => [
             'view'      => '/php/views/eu/quienesSomos.php'
         ],
-        '/eu/serbitzuak' => [
-            'view'      => '/php/views/eu/servicios.php'
+        '/eu/produktuak' => [
+            'view'      => '/php/views/eu/productos.php'
         ],
         '/eu/kontaktua' => [
             'view'      => '/php/views/eu/contacto.php'
         ]
-    ],
-    'en' => [
-        '/en' => [
-            'view'      => '/php/views/en/inicio.php'
-        ],
-        '/en/about-us' => [
-            'view'      => '/php/views/en/quienesSomos.php'
-        ],
-        '/en/services' => [
-            'view'      => '/php/views/en/servicios.php'
-        ],
-        '/en/contact' => [
-            'view'      => '/php/views/en/contacto.php'
-        ]
-    ],
-    'fr' => [
-        '/fr' => [
-            'view'      => '/php/views/fr/inicio.php'
-        ],
-        '/fr/a-propos-de-nous' => [
-            'view'      => '/php/views/fr/quienesSomos.php'
-        ],
-        '/fr/services' => [
-            'view'      => '/php/views/fr/servicios.php'
-        ],
-        '/fr/contact' => [
-            'view'      => '/php/views/fr/contacto.php'
-        ]
     ]
-
 ];
 
 // FASE 2 - COMO TODAS LAS PETICIONES LLEGAN AL INDEX.PHP (POR ACCIÓN DEL HTACCESS), AQUÍ ANALIZAMOS LA URL POR LA QUE VIENE PARA VER SI ES VÁLIDA O NO Y EN CASO DE SER VÁLIDA, CARGARLE LA VISTA (VIEW) ASIGNADA A ESA URL EN EL ARRAY.
