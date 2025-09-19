@@ -41,6 +41,12 @@ $arrayRutasGet = [
     ]
 ];
 
+// Variable de configuración para establecer la ruta del servidor.
+// Mientars esté trabajando en localhost, dejaré comentada la de producción, y cuando suba a producción, al revés.
+$ruta = "http://localhost:3000";
+// $ruta = "https://profe.webda.eus/proyecto07";
+
+
 // FASE 2 - COMO TODAS LAS PETICIONES LLEGAN AL INDEX.PHP (POR ACCIÓN DEL HTACCESS), AQUÍ ANALIZAMOS LA URL POR LA QUE VIENE PARA VER SI ES VÁLIDA O NO Y EN CASO DE SER VÁLIDA, CARGARLE LA VISTA (VIEW) ASIGNADA A ESA URL EN EL ARRAY.
 // EN ESTA FASE 2 ANALIZAMOS LA URL POR LA QUE EL USUARIO VIENE, Y EXTRAEMOS EL LENGUAJE EN $lang Y LA RUTA AMIGABLE EN $url, SIENDO ESTAS DOS VARIABLES NECESARIAS PARA LA FASE 3
 
@@ -48,7 +54,6 @@ $arrayRutasGet = [
 //Obtenemos la url entera desde la raiz
 // Ejemplo: "/es/contacto?id=10"
 $request = urldecode($_SERVER["REQUEST_URI"]) ?? '/es';
-
 
 
 // Extraemos únicamente el path para ignorar los parámetros de consulta
@@ -95,10 +100,18 @@ if (isset($arrayRutasGet[$lang][$url])) {
     
     //----VISTA----------
     require_once  __DIR__ . $view;
+
+    /* 
+    AQUÍ SE CARGARÁ TODO EL HTML DE LA VISTA QUE CORRESPONDA A TRAVÉS DEL INCLUDE (REQUIRE_ONCE)
+    */
     
 } else {
 
     // En caso de que $url no exista dentro del array de url permitidas, cargamos el contenido de la 404
     //----VISTA----------
     require_once __DIR__ . '/php/views/404.php';
+
+    /* 
+    AQUÍ SE CARGARÁ TODO EL HTML DEL 404
+    */
 }

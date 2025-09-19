@@ -10,11 +10,11 @@
 
     <!-- NAV -->
     <nav>
-        <img src="https://dummyimage.com/100x40" alt="" title="" width="" height="">
+        <img src="/assets/img/logos/panaderia-aginaga-logo.svg" alt="" title="" width="" height="">
 
         <ul>
-            <li><a href="./index.html" title="Página de inicio">Inicio</a></li>
-            <li><a href="./somos-panaderos.html" title="Tus panaderos y pasteleros en Donostia">Quienes somos</a></li>
+            <li><a href="localhost:3000/es" title="Página de inicio">Inicio</a></li>
+            <li><a href="" title="Tus panaderos y pasteleros en Donostia">Quienes somos</a></li>
             <li><a href="./productos-panaderia.html" title="Nuestros mejores poanes, pasteles y torrijas">Productos</a></li>
             <li><a href="./contacta-con-nosotros.html"title="Contacta con nosotr@s">Contacto</a></li>
         </ul>
@@ -30,7 +30,7 @@
     <header>        
         <h1>PROIEKTUA 7 MVC</h1>
         <div>            
-            <img src="https://dummyimage.com/500x300" alt="">
+            <img src="/assets/img/logos/panaderia-aginaga-logo.svg" alt="">
         </div>
         <a href="" class="boton">CTA</a>    
     </header>

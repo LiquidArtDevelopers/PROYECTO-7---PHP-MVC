@@ -746,7 +746,9 @@ footer #zonaTerminos {
   }
 }
 .sect01 article > :nth-child(1) .cards .card > img {
-  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
 }
 .sect01 article > :nth-child(1) .cards .card p {
   font-size: 0.9em;
