@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Panadería Aginaga | Obrador pastelería de alta calidad</title>
+    <meta name="description" content="120 y 320 caracteres">
     <link rel="stylesheet" href="./assets/css/inicio.min.css">
     <?php include './php/includes/es/metadatos_globales.php' ?>
 </head>
@@ -89,12 +90,10 @@
 
         <!-- SECCIÓN PRODUCTOS -->
         <section>
-
             <div class="h2Especial">
                 <span></span>
                 <h2>Nuestros productos</h2>
             </div>
-
             <!-- Artículo 02 -->
             <article class="art02">
 

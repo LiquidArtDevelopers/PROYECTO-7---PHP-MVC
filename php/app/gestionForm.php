@@ -1,5 +1,8 @@
 <?php
 
+echo "entra";
+die;
+
 include_once "../config/helpers.php";
 
 

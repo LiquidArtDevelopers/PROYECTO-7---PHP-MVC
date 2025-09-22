@@ -20,3 +20,7 @@ function mensaje_error($parametro01, $parametro02, $parametro03, $parametro04, $
 function mensaje_error2($p1, $p2, $p3, $p4, $p5){
     header("location:../../contacta-con-nosotros.php?campoError=$p1&tipoError=$p2&nombre2=$p3&telefono2=$p4&correo2=$p5");
 }
+
+
+// FUNCIÓN NATIVA PHP PARA CONSEGUIR EL AÑO, se usa en el footer
+$anio=date('Y');

@@ -3,63 +3,21 @@
 require_once "./php/config/helpers.php";
 
 
-// FASE 1 - CONFIGURAMOS LOS IDIOMAS Y RUTAS PERMITIDAS
+// FASE 1 - CONFIGURAMOS LOS IDIOMAS Y RUTAS PERMITIDAS, Y MOD DE DESARROLLO DEL SERVIDOR
 // A CADA RUTA PERMITIDA LE ASIGNAMOS LA UBICACIÓN DEL ARCHIVO QUE TIENE SU CONTENIDO
-
-// Array de idiomas permitidos
-$langs = ['es', 'eu'];
-
-//Array asociativo (3 nieveles) para determinar las url permitidas y asociarles el recurso de la vista que corresponda
-$arrayRutasGet = [
-    'es' => [
-        '/es' => [
-            'view'      => '/php/views/es/inicio.php' 
-        ],
-        '/es/sobre-nosotros' => [
-            'view'      => '/php/views/es/quienesSomos.php'
-        ],
-        '/es/productos' => [
-            'view'      => '/php/views/es/productos.php'
-        ],
-        '/es/contacto' => [
-            'view'      => '/php/views/es/contacto.php'
-        ]
-    ],
-    'eu' => [
-        '/eu' => [
-            'view'      => '/php/views/eu/inicio.php'
-        ],
-        '/eu/guri-buruz' => [
-            'view'      => '/php/views/eu/quienesSomos.php'
-        ],
-        '/eu/produktuak' => [
-            'view'      => '/php/views/eu/productos.php'
-        ],
-        '/eu/kontaktua' => [
-            'view'      => '/php/views/eu/contacto.php'
-        ]
-    ]
-];
-
-// Variable de configuración para establecer la ruta del servidor.
-// Mientars esté trabajando en localhost, dejaré comentada la de producción, y cuando suba a producción, al revés.
-$ruta = "http://localhost:3000";
-// $ruta = "https://profe.webda.eus/proyecto07";
+require_once "./php/config/config.php";
 
 
 // FASE 2 - COMO TODAS LAS PETICIONES LLEGAN AL INDEX.PHP (POR ACCIÓN DEL HTACCESS), AQUÍ ANALIZAMOS LA URL POR LA QUE VIENE PARA VER SI ES VÁLIDA O NO Y EN CASO DE SER VÁLIDA, CARGARLE LA VISTA (VIEW) ASIGNADA A ESA URL EN EL ARRAY.
 // EN ESTA FASE 2 ANALIZAMOS LA URL POR LA QUE EL USUARIO VIENE, Y EXTRAEMOS EL LENGUAJE EN $lang Y LA RUTA AMIGABLE EN $url, SIENDO ESTAS DOS VARIABLES NECESARIAS PARA LA FASE 3
 
-
 //Obtenemos la url entera desde la raiz
 // Ejemplo: "/es/contacto?id=10"
 $request = urldecode($_SERVER["REQUEST_URI"]) ?? '/es';
 
-
 // Extraemos únicamente el path para ignorar los parámetros de consulta
 // ejemplo: "/es/contacto"
 $url = parse_url($request, PHP_URL_PATH) ?? "/es";
-
 
 // Compruebo que $url no sea un "/", sino que sea otras url como "/es/contacto"
 if ($url != "/") {
@@ -88,15 +46,13 @@ if (!in_array($lang, $langs)) {
     exit;
 }
 
-
 // FASE 3 - UNA VEZ TENEMOS LA $URL DEL USUARIO, Y TENEMOS EL IDIOMA DE LA URL EN $LANG, COMPROBAMOS SI EXISTE ESA URL EN ESE IDIOMA CONSULTANDO EL ARRAY DE URL
-
 if (isset($arrayRutasGet[$lang][$url])) {
+
 
     // Si la url existe dentro del array de url's, entonces cogemos el valor de view, que es el archivo que haremos include para cargar el contenido pertienente de esta url.
     $view = $arrayRutasGet[$lang][$url]['view']; 
-
-    
+     
     
     //----VISTA----------
     require_once  __DIR__ . $view;
@@ -109,7 +65,7 @@ if (isset($arrayRutasGet[$lang][$url])) {
 
     // En caso de que $url no exista dentro del array de url permitidas, cargamos el contenido de la 404
     //----VISTA----------
-    require_once __DIR__ . '/php/views/404.php';
+    require_once __DIR__ . "/php/views/$lang/404.php";
 
     /* 
     AQUÍ SE CARGARÁ TODO EL HTML DEL 404

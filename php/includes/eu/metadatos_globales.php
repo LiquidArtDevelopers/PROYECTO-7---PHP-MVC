@@ -1,3 +1,6 @@
+<?php
+$anio=date('Y');
+?>
 
 
 <!-- V2 COOKIE LAD -->
