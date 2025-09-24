@@ -30,7 +30,7 @@
             <article class="artForm">
                 <h3>Lorem ipsum dolor sit.</h3>
 
-                <form action="<?php echo __DIR__."../../app/gestionForm.php" ?>" method="post">
+                <form action="/php/app/gestionForm.php" method="post">
 
                     <label for="nombre">Nombre *</label>
                     <input type="text" name="" id="nombre" placeholder="* Escribe tu nombre" required minlength="3" maxlength="20">
