@@ -1,5 +1,13 @@
 <?php
 
+// zona de variables de entorno
+require_once './vendor/autoload.php';
+use Dotenv\Dotenv;
+$dotenv = Dotenv::createImmutable('./');
+$dotenv->load();
+
+
+
 require_once "./php/config/helpers.php";
 
 
@@ -8,11 +16,14 @@ require_once "./php/config/helpers.php";
 require_once "./php/config/config.php";
 
 
+
+
+
 // FASE 2 - COMO TODAS LAS PETICIONES LLEGAN AL INDEX.PHP (POR ACCIÓN DEL HTACCESS), AQUÍ ANALIZAMOS LA URL POR LA QUE VIENE PARA VER SI ES VÁLIDA O NO Y EN CASO DE SER VÁLIDA, CARGARLE LA VISTA (VIEW) ASIGNADA A ESA URL EN EL ARRAY.
 // EN ESTA FASE 2 ANALIZAMOS LA URL POR LA QUE EL USUARIO VIENE, Y EXTRAEMOS EL LENGUAJE EN $lang Y LA RUTA AMIGABLE EN $url, SIENDO ESTAS DOS VARIABLES NECESARIAS PARA LA FASE 3
 
 //Obtenemos la url entera desde la raiz
-// Ejemplo: "/es/contacto?id=10"
+// Ejemplo: "/es/contacto?id=10"    
 $request = urldecode($_SERVER["REQUEST_URI"]) ?? '/es';
 
 // Extraemos únicamente el path para ignorar los parámetros de consulta

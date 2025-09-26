@@ -1,4 +1,11 @@
 <?php
+// zona de variables de entorno
+// Adaptamos el enrutamiento a donde esté /vendor y donde esté el .env
+require_once '../../vendor/autoload.php';
+use Dotenv\Dotenv;
+$dotenv = Dotenv::createImmutable('../../');
+$dotenv->load();
+
 
 include_once "../config/helpers.php";
 
@@ -9,51 +16,53 @@ $tel = $_POST['tel'];
 $email = $_POST['email'];
 $mensaje = $_POST['mensaje'];
 
-
 $ip = $_SERVER['REMOTE_ADDR'];
 $fecha = date('Y-m-d h:m:s');
 
 
-// 02 Comprobación (mostrarlos a través de echo para ver que vienen bien)
+// // 02 Comprobación (mostrarlos a través de echo para ver que vienen bien)
 // echo $nombre.'<br>';
 // echo $tel.'<br>';
 // echo $email.'<br>';
 // echo $mensaje.'<br>';
 // echo $ip.'<br>';
 // echo $fecha.'<br>';
+// echo $_ENV['RUTA'];
+// die;
+
 
 // 03 Validaciones de campos
 // de que no venga vacío Nombre
 if(empty($nombre)){    
-    mensaje_error("nombre", "vacio", $nombre, $tel, $email, $mensaje);
+    mensaje_error($_ENV['RUTA'],"nombre", "vacio", $nombre, $tel, $email, $mensaje);
 }
 // de que no venga vacío el teléfono
 if(empty($tel)){    
-    mensaje_error("telefono", "vacio", $nombre, $tel, $email, $mensaje);
+    mensaje_error($_ENV['RUTA'], "telefono", "vacio", $nombre, $tel, $email, $mensaje);
 }
 // de que no venga vacío el correo
 if(empty($email)==true){    
-    mensaje_error("email", "vacio", $nombre, $tel, $email, $mensaje);
+    mensaje_error($_ENV['RUTA'],"email", "vacio", $nombre, $tel, $email, $mensaje);
 }
 // de que no venga vacío el correo
 if(empty($mensaje)==true){    
-    mensaje_error("mensaje", "vacio", $nombre, $tel, $email, $mensaje);
+    mensaje_error($_ENV['RUTA'],"mensaje", "vacio", $nombre, $tel, $email, $mensaje);
 }
 
 // de que sea un correo adecuado (con expresiones regulares)
 if(validar_email($email)==false){    
-    mensaje_error("email", "sintaxis", $nombre, $tel, $email, $mensaje);
+    mensaje_error($_ENV['RUTA'],"email", "sintaxis", $nombre, $tel, $email, $mensaje);
 }
 
 // Comprobar si el nombre tiene entre 4 y 40 caracteres
 $numeroCaracteres = strlen($nombre);
 if($numeroCaracteres < 3 || $numeroCaracteres > 40){
-    mensaje_error("nombre", "caracteres", $nombre, $tel, $email, $mensaje);
+    mensaje_error($_ENV['RUTA'],"nombre", "caracteres", $nombre, $tel, $email, $mensaje);
 }
 // Mensaje entre 5 y 200 caractéres.
 $numeroCaracteres = strlen($mensaje);
 if($numeroCaracteres < 5 || $numeroCaracteres > 200){
-    mensaje_error("mensaje", "caracteres", $nombre, $tel, $email, $mensaje);
+    mensaje_error($_ENV['RUTA'],"mensaje", "caracteres", $nombre, $tel, $email, $mensaje);
 }
 
 
@@ -159,7 +168,7 @@ include "./envioPhpMailer.php";
 
 
 // 05 Redirección a la página de gracias.php
-header("location:../../gracias.php?nombre=$nombre");
+header('location:'.$_ENV["RUTA"].'/es/gracias?nombre='.$nombre);
 
 
 

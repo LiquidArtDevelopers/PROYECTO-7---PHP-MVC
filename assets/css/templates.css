@@ -459,6 +459,78 @@ footer #zonaTerminos {
   }
 }
 
+.art02-bis {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  row-gap: 2rem;
+}
+@media only screen and (min-width: 1200px) {
+  .art02-bis {
+    width: 80%;
+    row-gap: 4rem;
+  }
+}
+.art02-bis .textos {
+  width: 100%;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  row-gap: 1.5rem;
+}
+@media only screen and (min-width: 800px) {
+  .art02-bis .textos {
+    width: 80%;
+    row-gap: 2rem;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  .art02-bis .textos {
+    width: 60%;
+    row-gap: 2.5rem;
+  }
+}
+.art02-bis .imagenes {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+.art02-bis .imagenes > div {
+  width: 100%;
+  height: 30dvh;
+  position: relative;
+}
+@media only screen and (min-width: 800px) {
+  .art02-bis .imagenes > div {
+    width: 32%;
+    height: 25.6dvw;
+  }
+}
+.art02-bis .imagenes > div img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+.art02-bis .imagenes > div h4 {
+  position: absolute;
+  color: white;
+  text-shadow: 0px 0px 10px black;
+  font-size: clamp(1rem, 3vw, 4rem);
+  z-index: 10;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
 .art03 {
   width: 100%;
   padding: 0 1.5rem;

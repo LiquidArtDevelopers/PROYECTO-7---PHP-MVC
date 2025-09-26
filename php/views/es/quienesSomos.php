@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="./assets/css/quienesSomos.min.css">
+    <link rel="stylesheet" href="<?=$_ENV['RUTA']?>/assets/css/quienesSomos.min.css">
 </head>
 <body>
     <!-- NAV -->
@@ -14,7 +14,7 @@
     <header>        
         <h1>PROYECTO 7 MVC</h1>
         <div>            
-            <img src="/assets/img/logos/panaderia-aginaga-logo.svg" alt="">
+            <img src="<?=$_ENV['RUTA']?>/assets/img/logos/panaderia-aginaga-logo.svg" alt="">
         </div>
         <a href="" class="boton">CTA</a>    
     </header>

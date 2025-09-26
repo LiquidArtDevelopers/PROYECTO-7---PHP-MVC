@@ -14,10 +14,10 @@ $mail = new PHPMailer(true);
 try {
     $mail->SMTPDebug = 0;                                       
     $mail->isSMTP();
-    $mail->Host=''; /* modificar */                
+    $mail->Host=$_ENV['HOST']; /* modificar */                
     $mail->SMTPAuth   = true;                        
-    $mail->Username = ''; /* modificar */              
-    $mail->Password = ''; /* modificar */                       
+    $mail->Username = $_ENV['USERNAME']; /* modificar */              
+    $mail->Password = $_ENV['PASS']; /* modificar */                       
     $mail->SMTPSecure = 'ssl';                              
     $mail->Port = 465;  
   

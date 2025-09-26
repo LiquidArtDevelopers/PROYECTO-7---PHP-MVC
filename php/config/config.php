@@ -17,6 +17,15 @@ $arrayRutasGet = [
         ],
         '/es/contacto' => [
             'view'      => '/php/views/es/contacto.php'
+        ],
+        '/es/showroom' => [
+            'view'      => '/php/views/templates.php'
+        ],
+        '/es/terminos-legales' => [
+            'view'      => '/php/views/es/terminos.php'
+        ],
+        '/es/gracias' => [
+            'view'      => '/php/views/es/gracias.php'
         ]
     ],
     'eu' => [
@@ -31,11 +40,14 @@ $arrayRutasGet = [
         ],
         '/eu/kontaktua' => [
             'view'      => '/php/views/eu/contacto.php'
+        ],
+        '/eu/legezko-terminoak' => [
+            'view'      => '/php/views/eu/terminos.php'
+        ],
+        '/eu/eskerrikasko' => [
+            'view'      => '/php/views/eu/gracias.php'
         ]
     ]
 ];
 
-// Variable de configuración para establecer la ruta del servidor.
-// Mientars esté trabajando en localhost, dejaré comentada la de producción, y cuando suba a producción, al revés.
-$ruta = "http://localhost:3000";
-// $ruta = "https://profe.webda.eus/proyecto07";
+

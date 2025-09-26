@@ -5,21 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Panadería Aginaga | Obrador pastelería de alta calidad</title>
     <meta name="description" content="120 y 320 caracteres">
-    <link rel="stylesheet" href="./assets/css/inicio.min.css">
+    <link rel="stylesheet" href="<?=$_ENV['RUTA']?>/assets/css/inicio.min.css">
     <?php include './php/includes/es/metadatos_globales.php' ?>
 </head>
 <body>
+
+
 
     <!-- NAV -->
     <?php include './php/includes/es/nav.php' ?>
 
     <!-- HERO01 -->
     <header>        
-        <h1>PROYECTO 7 MVC</h1>
+        <h1>Panadería Aginaga</h1>
         <div>            
-            <img src="/assets/img/logos/panaderia-aginaga-logo.svg" alt="">
+            <img src="<?=$_ENV['RUTA']?>/assets/img/logos/panaderia-aginaga-logo.svg" alt="">
         </div>
-        <a href="" class="boton">CTA</a>    
+        <a href="<?=$_ENV['RUTA']?>/es/contacto" class="boton">Contáctanos</a>    
     </header>
 
     <main>
@@ -38,27 +40,27 @@
                     <span></span>
                     <div class="cards">
                         <div class="card">
-                            <img src="<?=$ruta?>/assets/img/system/people-outline.svg" alt="">
+                            <img src="<?=$_ENV['RUTA']?>/assets/img/system/people-outline.svg" alt="">
                             <h4>Panaderos de profesión</h4>
                             <p>Conoce nuestro equipo de obradores y panaderos.</p>
-                            <a href="<?=$ruta?>/es/sobre-nosotros" class="moduloBoton01">
-                                <span>Conócenos</span>
-                                <img src="<?=$ruta?>/assets/img/system/arrow-forward-outline.svg" alt="" title="">
+                            <a href="<?=$_ENV['RUTA']?>/es/sobre-nosotros" class="moduloBoton01">
+                                <span>Conoce nuestro equipo</span>
+                                <img src="<?=$_ENV['RUTA']?>/assets/img/system/arrow-forward-outline.svg" alt="" title="">
                             </a>
                         </div>
                         <div class="card">
-                            <img src="<?=$ruta?>/assets/img/system/star-outline.svg" alt="">
-                            <h4>Encabezado h4</h4>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat iusto ipsam quam porro, rem non nulla distinctio eligendi id possimus.</p>
-                            <a href="" class="moduloBoton01">
-                                <span>Leer más</span>
-                                <img src="./assets/img/system/arrow-forward-outline.svg" alt="" title="">
+                            <img src="<?=$_ENV['RUTA']?>/assets/img/system/star-outline.svg" alt="">
+                            <h4>Productos de primera calidad</h4>
+                            <p>Elaborados cada día por los maestros obradores con las mejores harinas.</p>
+                            <a href="<?=$_ENV['RUTA']?>/es/productos" class="moduloBoton01">
+                                <span>Nuestros productos</span>
+                                <img src="<?=$_ENV['RUTA']?>/assets/img/system/arrow-forward-outline.svg" alt="" title="">
                             </a>
                         </div>
                     </div>
-                    <a href="" class="moduloBoton02">
+                    <a href="<?=$_ENV['RUTA']?>/es/contacto" class="moduloBoton02">
                         <span>Contacta con nosotros</span>
-                        <img src="./assets/img/system/arrow-forward-outline.svg" alt="" title="">
+                        <img src="<?=$_ENV['RUTA']?>/assets/img/system/arrow-forward-outline.svg" alt="" title="">
                     </a>
                 </div>
                 <!-- hijo 2 -->
