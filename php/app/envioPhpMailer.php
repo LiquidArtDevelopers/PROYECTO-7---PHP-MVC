@@ -14,7 +14,7 @@ $mail = new PHPMailer(true);
 try {
     $mail->SMTPDebug = 0;                                       
     $mail->isSMTP();
-    $mail->Host=$_ENV['HOST']; /* modificar */                
+    $mail->Host= $_ENV['HOST']; /* modificar */                
     $mail->SMTPAuth   = true;                        
     $mail->Username = $_ENV['USERNAME']; /* modificar */              
     $mail->Password = $_ENV['PASS']; /* modificar */                       

@@ -4,16 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="./assets/css/terminos.min.css">
+    <link rel="stylesheet" href="<?=$_ENV['RUTA']?>/assets/css/terminos.min.css">
 
     <!-- Url de esta vista -->
-    <link rel="canonical" href="https://profe.webda.eus/terminos.php">
+    <link rel="canonical" href="<?=$_ENV['RUTA']?>/es/terminos-legales">
 
     <!-- Indexación y autoridad-->
     <meta name="robots" data-lang="robots" content="nofollow, noindex, max-snippet:-1, max-video-preview:-1, max-image-preview:large">
     <meta name="referrer" content="origin">
 
-    <?php include './php/includes/es/metadatos_globales.php'?>
+    <?php
+    // Metadatos globales
+    include './php/includes/es/metadatos_globales.php'
+    ?>
 </head>
 <body>
     <!-- NAV -->
@@ -26,9 +29,9 @@
     <header>        
         <h1>Términos y condiciones de privacidad y gestión de cookies</h1>
         <div>            
-            <img src="./assets/img/logos/panaderia-aginaga-logo.svg" alt="Logotipo Panadería Aginaga" title="Panadería Aginaga">
+            <img src="<?=$_ENV['RUTA']?>/assets/img/logos/panaderia-aginaga-logo.svg" alt="Logotipo Panadería Aginaga" title="Panadería Aginaga">
         </div>
-        <a href="./index.php" class="boton" title="Encuentra Panadería Aginaga">Inicio</a>     
+        <a href="<?=$_ENV['RUTA']?>/es" class="boton" title="Encuentra Panadería Aginaga">Inicio</a>     
     </header>
 
     <!-- TODO: COMPLETAR LAS VARIABLES Y VARIABILIZAR EL CONTENIDO -->

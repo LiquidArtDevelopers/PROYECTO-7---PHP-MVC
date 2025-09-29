@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="<?=$_ENV['RUTA']?>/assets/css/terminos.min.css">
 
     <!-- Url de esta vista -->
-    <link rel="canonical" href="https://profe.webda.eus/terminos.php">
+    <link rel="canonical" href="<?=$_ENV['RUTA']?>/es/terminos-legales">
 
     <!-- Indexación y autoridad-->
     <meta name="robots" data-lang="robots" content="nofollow, noindex, max-snippet:-1, max-video-preview:-1, max-image-preview:large">

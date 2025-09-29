@@ -76,6 +76,7 @@ if (isset($arrayRutasGet[$lang][$url])) {
 
     // En caso de que $url no exista dentro del array de url permitidas, cargamos el contenido de la 404
     //----VISTA----------
+    http_response_code(404);
     require_once __DIR__ . "/php/views/$lang/404.php";
 
     /* 

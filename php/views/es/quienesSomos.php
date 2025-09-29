@@ -5,6 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="<?=$_ENV['RUTA']?>/assets/css/quienesSomos.min.css">
+
+    <!-- Url de esta vista -->
+    <link rel="canonical" href="<?=$_ENV['RUTA']?>/es/sobre-nosotros">
+
+    <!-- Indexación y autoridad-->
+    <meta name="robots" data-lang="robots" content="follow, index, max-snippet:-1, max-video-preview:-1, max-image-preview:large">
+    <meta name="referrer" content="origin">
+
+    <?php
+    // Metadatos globales
+    include './php/includes/es/metadatos_globales.php'
+    ?>
 </head>
 <body>
     <!-- NAV -->

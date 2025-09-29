@@ -3,61 +3,76 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="/assets/css/inicio.min.css">
-    <?php include './php/includes/eu/metadatos_globales.php' ?>
+    <title>Panadería Aginaga | Obrador pastelería de alta calidad</title>
+    <meta name="description" content="120 y 320 caracteres">
+    <link rel="stylesheet" href="<?=$_ENV['RUTA']?>/assets/css/inicio.min.css">
+
+    <!-- Url de esta vista -->
+    <link rel="canonical" href="<?=$_ENV['RUTA']?>/es">
+
+    <!-- Indexación y autoridad-->
+    <meta name="robots" data-lang="robots" content="follow, index, max-snippet:-1, max-video-preview:-1, max-image-preview:large">
+    <meta name="referrer" content="origin">
+
+    <?php
+    // Metadatos globales
+    include './php/includes/es/metadatos_globales.php'
+    ?>
+    
 </head>
 <body>
 
+
+
     <!-- NAV -->
-    <?php include './php/includes/eu/nav.php' ?>
+    <?php include './php/includes/es/nav.php' ?>
 
     <!-- HERO01 -->
     <header>        
-        <h1>PROIEKTUA 7 MVC</h1>
+        <h1>Panadería Aginaga</h1>
         <div>            
-            <img src="/assets/img/logos/panaderia-aginaga-logo.svg" alt="">
+            <img src="<?=$_ENV['RUTA']?>/assets/img/logos/panaderia-aginaga-logo.svg" alt="">
         </div>
-        <a href="" class="boton">CTA</a>    
+        <a href="<?=$_ENV['RUTA']?>/es/contacto" class="boton">Contáctanos</a>    
     </header>
 
     <main>
 
-        <!-- PRESENTACIÓN -->
+        <!-- SECCIÓN PRESENTACIÓN -->
         <section class="sect01">
             <div class="h2Especial">
                 <span></span>
-                <h2>Presentación panadería</h2>
+                <h2>Te presentamos tu panadería en Aginaga</h2>
             </div>
             <article>
                 <!-- hijo 1 -->
                 <div>
-                    <h3>Encabezado h3</h3>
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repudiandae vitae amet rem earum maiores similique provident dolorem sunt odit sequi. Lorem ipsum dolor sit, amet consectetur adipisicing elit. </p>
+                    <h3>Producto artesanal para el día a día</h3>
+                    <p>Llevamos más de 70 años en Aginaga satisfaciendo a nuestros clientes con los mejores panes de masa madre y harinas de la mejor calidad. Nuestra pastelería dispone de un amplio surtido, elaborada los mejores productos </p>
                     <span></span>
                     <div class="cards">
                         <div class="card">
-                            <img src="https://dummyimage.com/40x40" alt="">
-                            <h4>Encabezado h4</h4>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat iusto ipsam quam porro, rem non nulla distinctio eligendi id possimus.</p>
-                            <a href="" class="moduloBoton01">
-                                <span>Leer más</span>
-                                <img src="./assets/img/system/arrow-forward-outline.svg" alt="" title="">
+                            <img src="<?=$_ENV['RUTA']?>/assets/img/system/people-outline.svg" alt="">
+                            <h4>Panaderos de profesión</h4>
+                            <p>Conoce nuestro equipo de obradores y panaderos.</p>
+                            <a href="<?=$_ENV['RUTA']?>/es/sobre-nosotros" class="moduloBoton01">
+                                <span>Conoce nuestro equipo</span>
+                                <img src="<?=$_ENV['RUTA']?>/assets/img/system/arrow-forward-outline.svg" alt="" title="">
                             </a>
                         </div>
                         <div class="card">
-                            <img src="https://dummyimage.com/40x40" alt="">
-                            <h4>Encabezado h4</h4>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat iusto ipsam quam porro, rem non nulla distinctio eligendi id possimus.</p>
-                            <a href="" class="moduloBoton01">
-                                <span>Leer más</span>
-                                <img src="./assets/img/system/arrow-forward-outline.svg" alt="" title="">
+                            <img src="<?=$_ENV['RUTA']?>/assets/img/system/star-outline.svg" alt="">
+                            <h4>Productos de primera calidad</h4>
+                            <p>Elaborados cada día por los maestros obradores con las mejores harinas.</p>
+                            <a href="<?=$_ENV['RUTA']?>/es/productos" class="moduloBoton01">
+                                <span>Nuestros productos</span>
+                                <img src="<?=$_ENV['RUTA']?>/assets/img/system/arrow-forward-outline.svg" alt="" title="">
                             </a>
                         </div>
                     </div>
-                    <a href="" class="moduloBoton02">
+                    <a href="<?=$_ENV['RUTA']?>/es/contacto" class="moduloBoton02">
                         <span>Contacta con nosotros</span>
-                        <img src="./assets/img/system/arrow-forward-outline.svg" alt="" title="">
+                        <img src="<?=$_ENV['RUTA']?>/assets/img/system/arrow-forward-outline.svg" alt="" title="">
                     </a>
                 </div>
                 <!-- hijo 2 -->
@@ -67,11 +82,11 @@
             </article>
         </section>
 
-        <!-- SOBRE NOSOTROS -->
+        <!-- SECCIÓN SOBRE NOSOTROS -->
         <section>
             <div class="h2Especial">
                 <span></span>
-                <h2>Nuestro equipo</h2>
+                <h2>Conóce nuestro equipo</h2>
             </div>
             <!-- Artículo 03 -->
             <article class="art03">
@@ -87,14 +102,12 @@
             </article>
         </section>
 
-        <!-- PRODUCTOS -->
-         <section>
-
+        <!-- SECCIÓN PRODUCTOS -->
+        <section>
             <div class="h2Especial">
                 <span></span>
                 <h2>Nuestros productos</h2>
             </div>
-
             <!-- Artículo 02 -->
             <article class="art02">
 
@@ -115,13 +128,12 @@
                 </div>
 
             </article>
-         </section>
+        </section>
 
     </main>
 
     <!-- FOOTER -->
-    <?php include './php/includes/eu/footer.php'?>
-    
+    <?php include './php/includes/es/footer.php'?>
 
 
 

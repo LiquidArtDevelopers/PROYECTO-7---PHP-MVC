@@ -73,7 +73,7 @@ if($numeroCaracteres < 5 || $numeroCaracteres > 200){
 // Crear el template del correo y darle valor a las variables que necesita phpMailer
 
 // recoger más variables que necesita el phpMailer:correo emisor y el nombre emisor,el correo receptor y su nombre, título del correo
-$correoEmisor ="no-reply@webda.eus"; //debe ser un correo que esté dado de alta en el servidor (webda.eus)
+$correoEmisor =$_ENV['EMAIL_WEB']; //debe ser un correo que esté dado de alta en el servidor (webda.eus)
 $nombreEmisor ="Panadería Aginaga";
 $correoDestinatario = $email;
 $nombreDestinatario= $nombre;
@@ -110,7 +110,7 @@ $cuerpo='
 
     <p>Gracias por escribirnos.</p>
     <p>Equipo de Panadería Agianga</p>
-    <a href="https://profe.webda.eus/proyecto05/">profe.webda.eus/proyecto05</a>
+    <a href="'.$_ENV['RUTA'].'">'.$_ENV['RUTA'].'</a>
 
 </body> 
 </html>
@@ -121,9 +121,9 @@ include "./envioPhpMailer.php"; //necesite ejecutar el envío de correo.
 
 // enviar un correo al admin de la web
 // recoger más variables que necesita el phpMailer:correo emisor y el nombre emisor,el correo receptor y su nombre, título del correo
-$correoEmisor ="no-reply@webda.eus";
+$correoEmisor =$_ENV['EMAIL_WEB'];
 $nombreEmisor ="Web Panadería";
-$correoDestinatario = "aranaz@webda.eus";
+$correoDestinatario = $_ENV['EMAIL_ADMIN'];
 $nombreDestinatario= "Admin de la web";
 $asunto = "Has recibido una nueva consulta en la web de $nombre";
 $cuerpo='
@@ -158,7 +158,7 @@ $cuerpo='
 
     <p>Un saludo</p>
     <p>Equipo de Panadería Agianga</p>
-    <a href="https://profe.webda.eus/proyecto05/">profe.webda.eus/proyecto05</a>
+    <a href="'.$_ENV['RUTA'].'">'.$_ENV['RUTA'].'</a>
 
 </body> 
 </html>
