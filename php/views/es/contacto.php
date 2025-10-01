@@ -80,9 +80,9 @@
                     <label for="mensaje">Comentarios</label>
                     <textarea name="mensaje" class='<?php if(isset($campo) && $campo == "mensaje"){ echo "inputError";} ?>' id="mensaje" placeholder="Escribe aquí tu mensaje"><?php if(isset($mensaje)){echo $mensaje;}?></textarea>
 
+                    <span class="error"><?php if( isset($campo) && $campo == "terminos"){echo "Para poder enviar una consulta, debes aceptar los términos";} ?></span>
                     <div>
-                        <input type="checkbox" name="terminos" id="aceptarTerminos">
-                        
+                        <input type="checkbox" name="terminos" id="aceptarTerminos">                        
                         <labelfor="aceptarTerminos">Aceptar <a href="<?=$_ENV['RUTA']?>/es/terminos-legales">términos y condiciones de privacidad</a></label>
                     </div>
 
