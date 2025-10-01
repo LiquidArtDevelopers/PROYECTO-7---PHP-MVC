@@ -7,15 +7,12 @@ $dotenv = Dotenv::createImmutable('./');
 $dotenv->load();
 
 
-
 require_once "./php/config/helpers.php";
 
 
 // FASE 1 - CONFIGURAMOS LOS IDIOMAS Y RUTAS PERMITIDAS, Y MOD DE DESARROLLO DEL SERVIDOR
 // A CADA RUTA PERMITIDA LE ASIGNAMOS LA UBICACIÓN DEL ARCHIVO QUE TIENE SU CONTENIDO
 require_once "./php/config/config.php";
-
-
 
 
 

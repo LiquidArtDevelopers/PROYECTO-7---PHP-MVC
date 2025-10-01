@@ -1,5 +1,3 @@
-
-
 <!-- V2 COOKIE LAD -->
 <script defer src="https://webda.eus/apis/cookielad/loader.js?key=barbakoaEnJulio!&color=d14d4d"></script>
 

@@ -1,16 +1,5 @@
-<?php
-$anio=date('Y');
-?>
-
-
 <!-- V2 COOKIE LAD -->
 <script defer src="https://webda.eus/apis/cookielad/loader.js?key=barbakoaEnJulio!&color=d14d4d"></script>
-
-<!-- otros metadatos importantes para cada vista -->
-
-<!-- Indexación y autoridad-->
-<meta name="robots" data-lang="robots" content="follow, index, max-snippet:-1, max-video-preview:-1, max-image-preview:large">
-<meta name="referrer" content="origin">
 
 <!-- utilidades para móvil -->
 <meta name="mobile-web-app-capable" content="yes">

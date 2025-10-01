@@ -1,16 +1,16 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="eu">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gracias por escribirnos | Panadería Aginaga – Obrador artesano y equipo</title>
-    <meta name="description" content="Descubre la historia de nuestra panadería en Aginaga y conoce al equipo de obradores artesanos. Maestros panaderos comprometidos con la masa madre y la tradición local. Servicio a Usurbil y Orio con pasión por la calidad y kilómetro cero.">
+    <title>Eskerrik asko idazteagatik | Aginagako Okindegia – Lantegi artisaua eta taldea</title>
+    <meta name="description" content="Ezagutu gure Aginagako okindegiaren historia eta ezagutu gure artisau langileen taldea. Ama orearekin eta tokiko tradizioarekin konprometitutako okin maisuak. Usurbil eta Orioko zerbitzua, kalitatearekin eta zero kilometroarekin konprometituta.">
     
     <!-- linko el css que le corresponde a esta vista -->
     <link rel="stylesheet" href="<?=$_ENV['RUTA']?>/assets/css/gracias.min.css">
 
     <!-- Url de esta vista -->
-    <link rel="canonical" href="<?=$_ENV['RUTA']?>/es/gracias">
+    <link rel="canonical" href="<?=$_ENV['RUTA']?>/eu/eskerrik-asko">
 
     <!-- Indexación y autoridad-->
     <meta name="robots" data-lang="robots" content="nofollow, noindex, max-snippet:-1, max-video-preview:-1, max-image-preview:large">
@@ -18,7 +18,7 @@
 
     <?php
     // Metadatos globales
-    include './php/includes/es/metadatos_globales.php'
+    include './php/includes/eu/metadatos_globales.php'
     ?>
 
 </head>
@@ -27,7 +27,7 @@
     <!-- NAV -->
     <?php
     // es código php
-    include './php/includes/es/nav.php'
+    include './php/includes/eu/nav.php'
     // ?>
 
     <?php
@@ -38,16 +38,16 @@
 
     <!-- HERO01 -->
     <header>        
-        <h1>Gracias por escribirnos <?php  if(isset($_GET['nombre'])){ echo $nombre;} ?></h1>
+        <h1>Eskerrik asko idazteagatik <?php  if(isset($_GET['nombre'])){ echo $nombre;} ?></h1>
         <div>            
-            <img src="<?=$_ENV['RUTA']?>/assets/img/logos/panaderia-aginaga-logo.svg" alt="Logotipo Panadería Aginaga" title="Panadería Aginaga">
+            <img src="<?=$_ENV['RUTA']?>/assets/img/logos/panaderia-aginaga-logo.svg" alt="Aginagako Okindegia logotipoa" title="Aginagako Okindegia">
         </div>
-        <a href="<?=$_ENV['RUTA']?>/es" class="boton" title="Encuentra Panadería Aginaga">Encuéntranos</a>     
+        <a href="<?=$_ENV['RUTA']?>/eu" class="boton" title="Aurkitu Aginagako Okindegia">Aurkitu gu</a>     
     </header>
 
     <!-- FOOTER -->
     <?php
-    include './php/includes/es/footer.php'
+    include './php/includes/eu/footer.php'
     ?>
 
 </body>
