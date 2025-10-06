@@ -329,6 +329,9 @@ footer > :nth-child(2) > div {
   justify-content: flex-start;
   row-gap: 4rem;
 }
+footer > :nth-child(2) > img {
+  filter: invert(1);
+}
 footer a, footer p {
   color: white;
 }
@@ -377,6 +380,7 @@ footer #zonaTerminos {
   .art03 img {
     width: 80%;
     height: 30dvh;
+    border-radius: 10px;
   }
 }
 
@@ -445,6 +449,24 @@ footer #zonaTerminos {
   text-align: center;
   font-weight: 100;
   min-height: 125px;
+}
+
+.art05 {
+  width: 100%;
+  padding: 0 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  row-gap: 3rem;
+}
+@media only screen and (min-width: 800px) {
+  .art05 {
+    width: 40%;
+    min-width: 600px;
+    row-gap: 4rem;
+    padding: initial;
+  }
 }
 
 .sect01 {
@@ -649,4 +671,15 @@ header {
 }
 header h1 {
   color: white;
+}
+@media only screen and (min-width: 1200px) {
+  header h1 {
+    width: 70%;
+  }
+}
+
+@media only screen and (min-width: 800px) {
+  .art03 img {
+    height: 55dvh;
+  }
 }/*# sourceMappingURL=quienesSomos.css.map */

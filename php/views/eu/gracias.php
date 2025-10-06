@@ -4,10 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Eskerrik asko idazteagatik | Aginagako Okindegia – Lantegi artisaua eta taldea</title>
-    <meta name="description" content="Ezagutu gure Aginagako okindegiaren historia eta ezagutu gure artisau langileen taldea. Ama orearekin eta tokiko tradizioarekin konprometitutako okin maisuak. Usurbil eta Orioko zerbitzua, kalitatearekin eta zero kilometroarekin konprometituta.">
-    
+
+    <meta name="description" content="Ezagutu gure Aginagako okindegiaren historia eta gure artisau langileen taldea. Ama orearekin eta tokiko tradizioarekin konprometitutako okin maisuak. Usurbil eta Orioko zerbitzua kalitatearekin eta zero kilometroarekin konprometituta.">
+        
     <!-- linko el css que le corresponde a esta vista -->
     <link rel="stylesheet" href="<?=$_ENV['RUTA']?>/assets/css/gracias.min.css">
+
+
 
     <!-- Url de esta vista -->
     <link rel="canonical" href="<?=$_ENV['RUTA']?>/eu/eskerrik-asko">
@@ -16,25 +19,32 @@
     <meta name="robots" data-lang="robots" content="nofollow, noindex, max-snippet:-1, max-video-preview:-1, max-image-preview:large">
     <meta name="referrer" content="origin">
 
+
+
     <?php
     // Metadatos globales
     include './php/includes/eu/metadatos_globales.php'
     ?>
 
 </head>
+
 <body>
 
     <!-- NAV -->
     <?php
     // es código php
     include './php/includes/eu/nav.php'
-    // ?>
+    ?>
+
+
 
     <?php
     if(isset($_GET['nombre'])){
         $nombre = $_GET['nombre'];
     }
     ?>
+
+
 
     <!-- HERO01 -->
     <header>        
@@ -44,6 +54,8 @@
         </div>
         <a href="<?=$_ENV['RUTA']?>/eu" class="boton" title="Aurkitu Aginagako Okindegia">Aurkitu gu</a>     
     </header>
+
+
 
     <!-- FOOTER -->
     <?php

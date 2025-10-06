@@ -3,6 +3,7 @@
 
 @use 'art03';
 @use 'art04';
+@use 'art05';
 @use 'sect01';
 @use 'moduloBoton01';
 @use 'moduloBoton02';
@@ -23,5 +24,17 @@ header{
     }
     h1{
         color: c.$color00;
+        @media only screen and (min-width:c.$desktop){
+            width: 70%;
+        }
+    }
+}
+
+
+.art03{
+    img{
+        @media only screen and (min-width:c.$tablet){
+            height: 55dvh;
+        }
     }
 }

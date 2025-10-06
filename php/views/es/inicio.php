@@ -48,7 +48,7 @@
                 <!-- hijo 1 -->
                 <div>
                     <h3>Producto artesanal para el día a día</h3>
-                    <p>Llevamos más de 70 años en Aginaga satisfaciendo a nuestros clientes con los mejores panes de masa madre y harinas de la mejor calidad. Nuestra pastelería dispone de un amplio surtido, elaborada los mejores productos </p>
+                    <p>Llevamos más de 100 años en Aginaga satisfaciendo a nuestros clientes con los mejores panes de masa madre y harinas de la mejor calidad. Nuestra pastelería dispone de un amplio surtido, elaborada los mejores productos </p>
                     <span></span>
                     <div class="cards">
                         <div class="card">
@@ -72,12 +72,12 @@
                     </div>
                     <a href="<?=$_ENV['RUTA']?>/es/contacto" class="moduloBoton02">
                         <span>Contacta con nosotros</span>
-                        <img src="<?=$_ENV['RUTA']?>/assets/img/system/arrow-forward-outline.svg" alt="" title="">
+                        <img src="<?=$_ENV['RUTA']?>/assets/img/system/arrow-forward-outline.svg" alt="Más de 100 años ofreciendo la mejor calidad en Agiña" title="Más de 100 años ofreciendo la mejor calidad en Agiña">
                     </a>
                 </div>
                 <!-- hijo 2 -->
                 <div>
-                    <img src="https://dummyimage.com/1000x1500" alt="">
+                    <img src="<?=$_ENV['RUTA']?>/assets/img/vistas/inicio/panaderia-pasteleria-aginaga-1500.avif" alt="" title="">
                 </div>
             </article>
         </section>
@@ -90,16 +90,15 @@
             </div>
             <!-- Artículo 03 -->
             <article class="art03">
-                
-                <h3>Encabezado h3 del art03</h3>
+                <h3>Un equipo con más de 100 años de tradición panadera</h3>
 
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Porro impedit deleniti cupiditate laudantium facere explicabo quo doloremque amet, molestias molestiae cum beatae, dolorum temporibus similique itaque dolore. Assumenda, possimus laborum.</p>
+                <p>En Aginaga, el pan es mucho más que un alimento: es el legado de generaciones de panaderos que, desde hace más de 100 años, madrugan cada día para mantener viva una forma de trabajar auténtica. Nuestro equipo combina la sabiduría artesanal heredada con técnicas actuales, logrando panes que conservan todo el sabor y la textura de antaño.</p>
 
-                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Beatae dolor a asperiores recusandae necessitatibus. Consequatur, molestiae ducimus? Eum, assumenda labore.</p>
+                <p>Detrás de cada pieza horneada hay manos expertas, paciencia y pasión. Elaboramos nuestras masas lentamente, respetando los tiempos de fermentación natural y seleccionando harinas de primera calidad. Así conseguimos panes crujientes por fuera, tiernos por dentro y con ese aroma inconfundible que solo se logra en un obrador de verdad.</p>
 
-                <img src="https://dummyimage.com/1500x900" alt="" title="">
-
+                <img src="<?=$_ENV['RUTA']?>/assets/img/vistas/inicio/panaderas-profesionales-1500.avif" alt="Equipo de panaderos de Aginaga trabajando en el obrador" title="Equipo de panaderos de Aginaga">
             </article>
+
         </section>
 
         <!-- SECCIÓN PRODUCTOS -->
@@ -108,25 +107,32 @@
                 <span></span>
                 <h2>Nuestros productos</h2>
             </div>
-            <!-- Artículo 02 -->
-            <article class="art02">
 
+            <!-- Artículo 02-bis -->
+            <article class="art02-bis">
                 <div class="textos">
-                    <h3>Encabezado h3 del art02</h3>
-                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Molestiae repudiandae obcaecati magni odio eius maxime iste expedita? Cum vel ad nihil laborum. Nobis unde aperiam rerum pariatur dignissimos, quam consequatur.</p>
-                    <!-- <a href="" class="boton">Más info</a> -->
-                    <a href="" class="moduloBoton02">
+                    <h3>La mejor calidad en productos realizados cada día</h3>                  
+                    <p>Nuestra carta de productos se actualiza cada estación, pero se fundamenta en tres pilares que definen nuestra identidad. En primer lugar, el <b>pan de masa madre</b> que fermenta durante 24 horas, desarrollando una corteza crujiente y un alveolado irregular lleno de sabor y nutrientes: es el favorito de quienes nos buscan como “<b>panadería en Aginaga</b>” o “<b>pan masa madre en Usurbil</b>”. En segundo lugar, nuestros <b>pasteles artesanos</b>, elaborados con mantequilla y huevos de caserío, sin aromas artificiales, con rellenos de temporada como crema de avellana de Navarra o compota de manzana reineta. Finalmente, las <b>torrijas</b>, inspiradas en la receta de la amona pero disponibles todo el año; las servimos con miel de azahar o con un delicado almíbar de vainilla bourbon que las hace inolvidables. Cada producto cuenta con su propio proceso cuidadoso, fichas de alérgenos actualizadas y la posibilidad de <b>reserva online</b> para que llegues y lo tengas listo. Además, nuestras famosas <b>torrijas de Aginaga</b> pueden reservarse en línea para cualquier celebración, destacando nuestra <b>panadería en Aginaga</b> como la opción preferida para un dulce tradicional.</p>
+                    <a href="<?=$_ENV['RUTA']?>/es/productos" class="moduloBoton02">
                         <span>Más información</span>
-                        <img src="./assets/img/system/arrow-forward-outline.svg" alt="" title="">
+                        <img src="<?=$_ENV['RUTA']?>/assets/img/system/arrow-forward-outline.svg" alt="Ir a Nuestros productos" title="Más información">
                     </a>
                 </div>
 
-                <div class="imagenes">
-                    <img src="https://dummyimage.com/900x900" alt="" title="">
-                    <img src="https://dummyimage.com/900x900" alt="" title="">
-                    <img src="https://dummyimage.com/900x900" alt="" title="">
+                <div class="imagenes">                    
+                    <a href="<?=$_ENV['RUTA']?>/es/productos#hitoPanes" title="Los mejores panes de masa madre">
+                        <img src="<?=$_ENV['RUTA']?>/assets/img/vistas/inicio/amplio-surtido-panes-1200.avif" alt="Pan de masa madre en Usurbil y Aginaga" title="Pan de masa madre en Usurbil y Aginaga">
+                        <h4>Panadería</h4>
+                    </a>
+                    <a href="<?=$_ENV['RUTA']?>/es/productos#hitoPasteles" title="Pastelería artesana bajo demanda">
+                        <img src="<?=$_ENV['RUTA']?>/assets/img/vistas/inicio/amplio-surtido-pasteles-1200.avif" alt="Pasteles artesanos: del obrador a tu mesa" title="Pasteles artesanos: del obrador a tu mesa">
+                        <h4>Pastelería</h4>
+                    </a>
+                    <a href="<?=$_ENV['RUTA']?>/es/productos#hitoTorrijas" title="Torrijas tradicionales a fuego lento">
+                        <img src="<?=$_ENV['RUTA']?>/assets/img/vistas/inicio/las-mejores-torrijas-de-gipuzkoa1200.avif" alt="Torrijas tradicionales todo el año" title="Torrijas tradicionales todo el año">
+                        <h4>Torrijas</h4>
+                    </a>                    
                 </div>
-
             </article>
         </section>
 

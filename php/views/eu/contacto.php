@@ -7,6 +7,8 @@
     <meta name="description" content="Aginagako gure okindegiko harremanetarako orria">
     <link rel="stylesheet" href="<?=$_ENV['RUTA']?>/assets/css/contacto.min.css">
 
+
+
     <!-- Url de esta vista -->
     <link rel="canonical" href="<?=$_ENV['RUTA']?>/eu/kontaktua">
 
@@ -21,18 +23,24 @@
 
 </head>
 
+
+
 <body>
 
     <!-- NAV -->
     <?php include './php/includes/eu/nav.php' ?>
+
+
 
     <!-- HERO01 -->
     <header>
         <h1>Zugandik gertu gaude</h1>
         <div>            
             <img src="<?=$_ENV['RUTA']?>/assets/img/logos/panaderia-aginaga-logo.svg" alt="">
-        </div>        
-    </header>    
+        </div>
+    </header>
+
+
 
     <main>
         <section>
@@ -42,11 +50,15 @@
                 <h2>Kontaktua</h2>
             </div>
 
+
+
             <!-- artForm -->
             <article class="artForm">
                 <h3>Harremanetarako formularioa</h3>
 
                 <form action="/php/app/gestionForm.php" method="post">
+
+
 
                     <?php
                     if( isset($_GET['campo']) ){
@@ -60,6 +72,8 @@
                     }
                     ?>
 
+
+
                     <span class="error"><?php if( isset($campo) && $campo == "nombre"){echo "Errorea dago $campo eremuan, mota: $error";} ?></span>
                     <label for="nombre">Izena *</label>
                     <input type="text" class='<?php if(isset($campo) && $campo == "nombre"){ echo "inputError";} ?>' name="nombre" id="nombre" placeholder="* Idatzi zure izena" value="<?php if(isset($nombre)){echo $nombre;}?>">
@@ -68,21 +82,25 @@
                     <label for="tel">Telefonoa</label>
                     <input type="tel" class='<?php if(isset($campo) && $campo == "telefono"){ echo "inputError";} ?>' name="tel" id="tel" placeholder="Hemen zure telefonoa" value="<?php if(isset($tel)){echo $tel;}?>">
 
-                    
                     <span class="error"><?php if( isset($campo) && $campo == "email"){echo "Errorea dago $campo eremuan, mota: $error";} ?></span>
                     <label for="email">Emaila *</label>
-                    <input type="email" class='<?php if(isset($campo) && $campo == "email"){ echo "inputError";} ?>' name="email" id="email" placeholder="* Posta elektronikoa" value="<?php if(isset($email)){echo $email;}?>">
+                    <input type="email" class='<?php if(isset($campo) && $campo == "email"){ echo "inputError";} ?>' name="email" id="email" placeholder="* Posta elektronikoa" value="<?php if(isset($email)){echo $email;}?>"
+
+
+
 
 
                     <span class="error"><?php if( isset($campo) && $campo == "mensaje"){echo "Errorea dago $campo eremuan, mota: $error";} ?></span>
                     <label for="mensaje">Iruzkinak</label>
                     <textarea name="mensaje" class='<?php if(isset($campo) && $campo == "mensaje"){ echo "inputError";} ?>' id="mensaje" placeholder="Idatzi hemen zure mezua"><?php if(isset($mensaje)){echo $mensaje;}?></textarea>
 
+                    <span class="error"><?php if( isset($campo) && $campo == "terminos"){echo "Kontsulta bat bidaltzeko, baldintzak onartu behar dituzu";} ?></span>
                     <div>
                         <input type="checkbox" name="terminos" id="aceptarTerminos">
-                        
-                        <labelfor="aceptarTerminos">Onartu <a href="<?=$_ENV['RUTA']?>/eu/lege-baldintzak">pribatutasun baldintzak</a></label>
+                        <label for="aceptarTerminos">Onartu <a href="<?=$_ENV['RUTA']?>/eu/lege-baldintzak">pribatutasun baldintzak</a></label>
                     </div>
+
+
 
                     <input type="submit" value="BIDALI" class="boton">
 

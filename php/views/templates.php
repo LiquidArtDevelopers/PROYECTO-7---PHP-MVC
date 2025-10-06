@@ -76,18 +76,18 @@
                 </div>
 
                 <div class="imagenes">                    
-                    <div>
+                    <a href="<?=$_ENV['RUTA']?>/es/productos" title="Los mejores panes de masa madre">
                         <img src="<?=$_ENV['RUTA']?>/assets/img/vistas/inicio/amplio-surtido-panes-1200.avif" alt="Pan de masa madre en Usurbil y Aginaga" title="Pan de masa madre en Usurbil y Aginaga">
                         <h4>Panadería</h4>
-                    </div>
-                    <div>
+                    </a>
+                    <a href="<?=$_ENV['RUTA']?>/es/productos" title="Pastelería artesana bajo demanda">
                         <img src="<?=$_ENV['RUTA']?>/assets/img/vistas/inicio/amplio-surtido-pasteles-1200.avif" alt="Pasteles artesanos: del obrador a tu mesa" title="Pasteles artesanos: del obrador a tu mesa">
                         <h4>Pastelería</h4>
-                    </div>
-                    <div>
+                    </a>
+                    <a href="<?=$_ENV['RUTA']?>/es/productos" title="Torrijas tradicionales a fuego lento">
                         <img src="<?=$_ENV['RUTA']?>/assets/img/vistas/inicio/las-mejores-torrijas-de-gipuzkoa1200.avif" alt="Torrijas tradicionales todo el año" title="Torrijas tradicionales todo el año">
                         <h4>Torrijas</h4>
-                    </div>                    
+                    </a>                    
                 </div>
             </article>
 
@@ -157,9 +157,9 @@
         <section>
             <!-- artForm -->
             <article class="artForm">
-                <h3>Lorem ipsum dolor sit.</h3>
+                <h3>Formulario de contacto</h3>
 
-                <form action="./php/app/gestionForm.php" method="post">
+                <form action="/php/app/gestionForm.php" method="post">
 
                     <?php
                     if( isset($_GET['campo']) ){
@@ -193,97 +193,16 @@
                     <label for="mensaje">Comentarios</label>
                     <textarea name="mensaje" class='<?php if(isset($campo) && $campo == "mensaje"){ echo "inputError";} ?>' id="mensaje" placeholder="Escribe aquí tu mensaje"><?php if(isset($mensaje)){echo $mensaje;}?></textarea>
 
+                    <span class="error"><?php if( isset($campo) && $campo == "terminos"){echo "Para poder enviar una consulta, debes aceptar los términos";} ?></span>
                     <div>
-                        <input type="checkbox" name="terminos" id="aceptarTerminos">
-                        
-                        <labelfor="aceptarTerminos">Aceptar <a href="./terminos.php">términos y condiciones de privacidad</a></label>
+                        <input type="checkbox" name="terminos" id="aceptarTerminos">                        
+                        <labelfor="aceptarTerminos">Aceptar <a href="<?=$_ENV['RUTA']?>/es/terminos-legales">términos y condiciones de privacidad</a></label>
                     </div>
 
                     <input type="submit" value="ENVIAR" class="boton">
 
                     <p>* Campos obligatorios</p>
 
-                </form>
-
-
-                <!-- 
-                1- Hacer un form con 2 campos nombre y teléfono (y sus label), y el boton de enviar
-                2- enviarlo a un arvhivo de gestión del formulariuo que se llame gestionPracticaForm.php
-                3- en ese archivo quiero hacer un echo de los valores recibidos -->
-
-                <!-- 
-                4- En el backend comprobar que los campos no vengan vacíos, en caso de que vengan vacíos, redireccionar a la página de contacto
-                
-                5- En el redireccionamiento, enviamos 2 parametros en la URL, el campo y el error -->
-
-                <!-- 
-                6- recoger en variables los valores de los parámetros enviados a través de la URL (sólo se recogen si existen dichos parámetros en la url, si no, no)
-                
-                7- mostrar un mensaje encima del formulario donde se diga en qué campo y qué error se ha cometido
-                
-                8- mejora: mostrar el error encima del campo en el que se ha cometido el error-->
-
-                <!-- 
-                9- En el backend, vamos a enviar dos parámetros adicionales, que serán lo que el usuario ha escrito en el campo nombre y en el campo teléfono.
-                10- Recogemos en la página de contacto esos parámetros en nuevas variables
-                11- Usamos esas variables para rellenar los values de los input del formulario
-                12- extra1: añadir al input la clase inputError para que se contornee de rojo.
-
-                13- extra2: añadir un campo tipo email, con el mismo recorrido que el resto de inputs
-                -->
-
-                <!-- 
-                14- comprobar que el correo tenga un formato de correo (expresión regular)
-                15- comprobar que el nombre tenga entre 3 y 20 caracteres  -->
-
-                <!-- 
-                16- En el backend (gestionPracticaForm.php) continuar con los puntos 4 y 5, que son envío de correos con PHOMAiler y redirección a gracias.php con query Param donde se envíe el nombre -->
-
-                <?php                
-                // recoger las variables GET
-                // imprimir un mensaje en una <p>
-                if(isset($_GET['campoError']) && isset($_GET['tipoError'])){
-                    $campoError = $_GET['campoError'];
-                    $tipoError = $_GET['tipoError'];
-                    $nombre2 = $_GET['nombre2'];
-                    $telefono2 = $_GET['telefono2'];
-                    $correo2 = $_GET['correo2'];
-                    echo "<p class='error'>Hay un error en el campo $campoError de tipo $tipoError</p>";
-                }
-                ?>
-
-                <form action="./php/app/gestionPracticaForm.php" method="post">
-
-                    
-                    <label for="campoNombre">Nombre</label>                    
-                    <input type="text" class="<?php if($campoError=="nombre"){echo 'inputError';} ?>" name="nom" id="campoNombre" placeholder="Escribe aquí tu nombre" value="<?php if(isset($nombre2)){ echo $nombre2;}?>">
-                    <?php
-                    if(isset($campoError) && $campoError == 'nombre'){
-                        echo "<p class='error'>Hay un error en el campo $campoError de tipo $tipoError</p>";
-                    }
-                    ?>
-
-                    
-                    <label for="campoTelefono">Teléfono</label>                    
-                    <input type="tel" class="<?php if($campoError=="telefono"){echo 'inputError';} ?>" name="tel" id="campoTelefono" placeholder="Escribe aquí tu teléfono" value="<?php if(isset($telefono2)){ echo $telefono2;}?>">
-                    <?php
-                    if(isset($campoError) && $campoError == 'telefono'){
-                        echo "<p class='error'>Hay un error en el campo $campoError de tipo $tipoError</p>";
-                    }
-                    ?>
-
-
-
-                    <label for="campoEmail">Correo Electrónico</label>
-                    <input type="email" class="<?php if($campoError=="correo"){echo 'inputError';} ?>" name="email" id="campoEmail" placeholder="Escribe aquí tu correo electrónico" value="<?php if(isset($correo2)){ echo $correo2;}?>">
-                    <?php
-                    if(isset($campoError) && $campoError == 'correo'){
-                        echo "<p class='error'>Hay un error en el campo $campoError de tipo $tipoError</p>";
-                    }
-                    ?>
-
-
-                    <input class="boton" type="submit" value="Enviar Formulario">
                 </form>
 
             </article>
@@ -368,7 +287,19 @@
                     </div>
                 </div>
             </article>
+
+            <!-- artículo 05 -->
+            <article class="art05">
+                <h3>Encabezado art05</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis porro libero doloribus necessitatibus explicabo nostrum, itaque excepturi reprehenderit magni alias.</p>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Et qui laboriosam voluptas, maxime possimus ab dolor aliquam nobis repellendus voluptatem vero sed explicabo totam quaerat dolores veritatis fuga quibusdam cumque.</p>
+                <a href="" class="boton">CTA</a>
+            </article>
+
         </section>
+
+
+
         
     </main>
 

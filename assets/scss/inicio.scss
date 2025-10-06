@@ -4,7 +4,7 @@
 @use 'sect01';
 @use 'moduloBoton01';
 @use 'moduloBoton02';
-@use 'art02';
+@use 'art02-bis';
 @use 'art03';
 
 
@@ -23,6 +23,12 @@ header{
     }
     h1{
         color: c.$color00; 
+    }
+}
+
+.art03{
+    img{
+        object-position: 0 -100px;
     }
 }
 

@@ -29,7 +29,8 @@
         object-position: center;
         @media only screen and (min-width: c.$tablet){
             width: 80%;
-             height: 30dvh;
+            height: 30dvh;
+            border-radius: 10px;
         }
     }
 }

@@ -329,6 +329,9 @@ footer > :nth-child(2) > div {
   justify-content: flex-start;
   row-gap: 4rem;
 }
+footer > :nth-child(2) > img {
+  filter: invert(1);
+}
 footer a, footer p {
   color: white;
 }

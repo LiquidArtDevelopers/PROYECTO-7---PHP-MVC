@@ -211,6 +211,9 @@ footer{
             justify-content: flex-start;
             row-gap: 4rem;
         }
+        >img{
+            filter: invert(1);
+        }
     }
     a, p{
         color: c.$color00;
