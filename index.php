@@ -39,6 +39,7 @@ if ($url != "/") {
     $urlParse = explode("/", $url);
     // Metemos dentro de $lang, el valor del array enb la posición 1, que es donde está el idioma. El arrat cuenta sus items empezando desde el 0, por lo tanto en el array ["", "es", "contacto"], la posición 1 es "es"
     $lang = $urlParse[1];
+
     // Obtener $lang me sirve para determinar en qué carpeta tengo que buscar $view, que es la vista del contenido que se cargará.
 } else {
     // Si la ruta termina viene vacía como "/", redirigimos a la ruta principal con el idioma principal para que venga como "/es"

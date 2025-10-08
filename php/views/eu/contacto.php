@@ -58,8 +58,6 @@
 
                 <form action="/php/app/gestionForm.php" method="post">
 
-
-
                     <?php
                     if( isset($_GET['campo']) ){
                         // si entro es que viene un error marcado en la url con query string
@@ -71,8 +69,6 @@
                         $mensaje = $_GET['mensaje'];
                     }
                     ?>
-
-
 
                     <span class="error"><?php if( isset($campo) && $campo == "nombre"){echo "Errorea dago $campo eremuan, mota: $error";} ?></span>
                     <label for="nombre">Izena *</label>
@@ -86,10 +82,6 @@
                     <label for="email">Emaila *</label>
                     <input type="email" class='<?php if(isset($campo) && $campo == "email"){ echo "inputError";} ?>' name="email" id="email" placeholder="* Posta elektronikoa" value="<?php if(isset($email)){echo $email;}?>"
 
-
-
-
-
                     <span class="error"><?php if( isset($campo) && $campo == "mensaje"){echo "Errorea dago $campo eremuan, mota: $error";} ?></span>
                     <label for="mensaje">Iruzkinak</label>
                     <textarea name="mensaje" class='<?php if(isset($campo) && $campo == "mensaje"){ echo "inputError";} ?>' id="mensaje" placeholder="Idatzi hemen zure mezua"><?php if(isset($mensaje)){echo $mensaje;}?></textarea>
@@ -100,6 +92,10 @@
                         <label for="aceptarTerminos">Onartu <a href="<?=$_ENV['RUTA']?>/eu/lege-baldintzak">pribatutasun baldintzak</a></label>
                     </div>
 
+                    <!-- inpout oculto donde el value es el valor de $lang, ergo el idioma -->
+                    <input type="text" name="inputIdioma" value="<?= $lang?>" style="display:none;">
+                    <!-- otro input oculta -->
+                    <input type="text" name="inputUrl" value="<?= $url?>" style="display:none;">
 
 
                     <input type="submit" value="BIDALI" class="boton">

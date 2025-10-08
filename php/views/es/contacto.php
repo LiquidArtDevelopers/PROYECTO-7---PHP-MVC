@@ -42,10 +42,12 @@
                 <h2>Contacta</h2>
             </div>
 
+            
             <!-- artForm -->
             <article class="artForm">
                 <h3>Formulario de contacto</h3>
 
+                <!-- Al abrir este otro archivo, genero otro scope, se reseta y limpia la memoria en el servidor -->
                 <form action="/php/app/gestionForm.php" method="post">
 
                     <?php
@@ -85,6 +87,12 @@
                         <input type="checkbox" name="terminos" id="aceptarTerminos">                        
                         <labelfor="aceptarTerminos">Aceptar <a href="<?=$_ENV['RUTA']?>/es/terminos-legales">términos y condiciones de privacidad</a></label>
                     </div>
+
+                    <!-- inpout oculto donde el value es el valor de $lang, ergo el idioma -->
+                    <input type="text" name="inputIdioma" value="<?= $lang?>" style="display:none;">
+                    <!-- otro input oculta -->
+                    <input type="text" name="inputUrl" value="<?= $url?>" style="display:none;">
+                    
 
                     <input type="submit" value="ENVIAR" class="boton">
 

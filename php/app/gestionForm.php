@@ -17,6 +17,9 @@ $email = $_POST['email'];
 $mensaje = $_POST['mensaje'];
 $terminos = $_POST['terminos'];
 
+$lang = $_POST['inputIdioma'];
+$url = $_POST['inputUrl'];
+
 $ip = $_SERVER['REMOTE_ADDR'];
 $fecha = date('Y-m-d h:m:s');
 
@@ -30,7 +33,9 @@ $fecha = date('Y-m-d h:m:s');
 // echo $fecha.'<br>';
 // echo $_ENV['RUTA'].'<br>';
 // echo $terminos;
-// die;
+echo $lang.'<br>';
+echo $url;
+die;
 
 
 
@@ -163,6 +168,10 @@ $cuerpo='
         <tr>
             <td align="left" style="background-color: white;padding: 0.5rem 1rem;border: 1px solid black">Consulta:</td>
             <td align="left" style="background-color: white;padding: 0.5rem 1rem;border: 1px solid black">'.$mensaje.'</td>
+        </tr>
+        <tr>
+            <td align="left" style="background-color: white;padding: 0.5rem 1rem;border: 1px solid black">Url desde la que ha escrito el form:</td>
+            <td align="left" style="background-color: white;padding: 0.5rem 1rem;border: 1px solid black">'.$url.'</td>
         </tr>
     </table>
 
