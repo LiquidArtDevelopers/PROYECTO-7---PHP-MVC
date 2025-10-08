@@ -33,9 +33,9 @@ $fecha = date('Y-m-d h:m:s');
 // echo $fecha.'<br>';
 // echo $_ENV['RUTA'].'<br>';
 // echo $terminos;
-echo $lang.'<br>';
-echo $url;
-die;
+// echo $lang.'<br>';
+// echo $url;
+// die;
 
 
 
@@ -44,40 +44,40 @@ die;
 
 // Validación de aceptación de términos
 if(empty($terminos)){    
-    mensaje_error($_ENV['RUTA'],"terminos", "vacio", $nombre, $tel, $email, $mensaje);
+    mensaje_error($lang, $_ENV['RUTA'],"terminos", "vacio", $nombre, $tel, $email, $mensaje);
 }
 
 // de que no venga vacío Nombre
 if(empty($nombre)){    
-    mensaje_error($_ENV['RUTA'],"nombre", "vacio", $nombre, $tel, $email, $mensaje);
+    mensaje_error($lang, $_ENV['RUTA'],"nombre", "vacio", $nombre, $tel, $email, $mensaje);
 }
 // de que no venga vacío el teléfono
 if(empty($tel)){    
-    mensaje_error($_ENV['RUTA'], "telefono", "vacio", $nombre, $tel, $email, $mensaje);
+    mensaje_error($lang, $_ENV['RUTA'], "telefono", "vacio", $nombre, $tel, $email, $mensaje);
 }
 // de que no venga vacío el correo
 if(empty($email)==true){    
-    mensaje_error($_ENV['RUTA'],"email", "vacio", $nombre, $tel, $email, $mensaje);
+    mensaje_error($lang, $_ENV['RUTA'],"email", "vacio", $nombre, $tel, $email, $mensaje);
 }
 // de que no venga vacío el correo
 if(empty($mensaje)==true){    
-    mensaje_error($_ENV['RUTA'],"mensaje", "vacio", $nombre, $tel, $email, $mensaje);
+    mensaje_error($lang, $_ENV['RUTA'],"mensaje", "vacio", $nombre, $tel, $email, $mensaje);
 }
 
 // de que sea un correo adecuado (con expresiones regulares)
 if(validar_email($email)==false){    
-    mensaje_error($_ENV['RUTA'],"email", "sintaxis", $nombre, $tel, $email, $mensaje);
+    mensaje_error($lang, $_ENV['RUTA'],"email", "sintaxis", $nombre, $tel, $email, $mensaje);
 }
 
 // Comprobar si el nombre tiene entre 4 y 40 caracteres
 $numeroCaracteres = strlen($nombre);
 if($numeroCaracteres < 3 || $numeroCaracteres > 40){
-    mensaje_error($_ENV['RUTA'],"nombre", "caracteres", $nombre, $tel, $email, $mensaje);
+    mensaje_error($lang, $_ENV['RUTA'],"nombre", "caracteres", $nombre, $tel, $email, $mensaje);
 }
 // Mensaje entre 5 y 200 caractéres.
 $numeroCaracteres = strlen($mensaje);
 if($numeroCaracteres < 5 || $numeroCaracteres > 200){
-    mensaje_error($_ENV['RUTA'],"mensaje", "caracteres", $nombre, $tel, $email, $mensaje);
+    mensaje_error($lang, $_ENV['RUTA'],"mensaje", "caracteres", $nombre, $tel, $email, $mensaje);
 }
 
 
@@ -92,44 +92,93 @@ $correoEmisor =$_ENV['EMAIL_WEB']; //debe ser un correo que esté dado de alta e
 $nombreEmisor ="Panadería Aginaga";
 $correoDestinatario = $email;
 $nombreDestinatario= $nombre;
-$asunto = "Hemos recibido tu correo, $nombre - Panadería Aginaga";
-$cuerpo='
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>'.$asunto.'</title>
-</head>
-<body align="center" style="padding: 1.5rem;background-color: rgb(255, 227, 227);">
-    <h1>Hemos recibido tu correo, '.$nombre.'</h1>
-    <p>Estos son los datos que hemos recibido en la web de <a href="https://profe.webda.eus/proyecto05/">profe.webda.eus/proyecto05</a> de tu consulta:</p>
-    <table align="center">
-        <tr>
-            <td align="left" style="background-color: white;padding: 0.5rem 1rem;border: 1px solid black">Nombre:</td>
-            <td align="left" style="background-color: white;padding: 0.5rem 1rem;border: 1px solid black">'.$nombre.'</td>
-        </tr>
-        <tr>
-            <td align="left" style="background-color: white;padding: 0.5rem 1rem;border: 1px solid black">Teléfono:</td>
-            <td align="left" style="background-color: white;padding: 0.5rem 1rem;border: 1px solid black">'.$tel.'</td>
-        </tr>
-        <tr>
-            <td align="left" style="background-color: white;padding: 0.5rem 1rem;border: 1px solid black">Correo Electrónico:</td>
-            <td align="left" style="background-color: white;padding: 0.5rem 1rem;border: 1px solid black">'.$email.'</td>
-        </tr>
-        <tr>
-            <td align="left" style="background-color: white;padding: 0.5rem 1rem;border: 1px solid black">Consulta:</td>
-            <td align="left" style="background-color: white;padding: 0.5rem 1rem;border: 1px solid black">'.$mensaje.'</td>
-        </tr>
-    </table>
 
-    <p>Gracias por escribirnos.</p>
-    <p>Equipo de Panadería Agianga</p>
-    <a href="'.$_ENV['RUTA'].'">'.$_ENV['RUTA'].'</a>
+switch ($lang){
+    case 'es':
+        $asunto = "Hemos recibido tu correo, $nombre - Panadería Aginaga";
+        $cuerpo='
+        <!DOCTYPE html>
+        <html lang="es">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>'.$asunto.'</title>
+        </head>
+        <body align="center" style="padding: 1.5rem;background-color: rgb(255, 227, 227);">
+            <h1>Hemos recibido tu correo, '.$nombre.'</h1>
+            <p>Estos son los datos que hemos recibido en la web de <a href="https://profe.webda.eus/proyecto05/">profe.webda.eus/proyecto05</a> de tu consulta:</p>
+            <table align="center">
+                <tr>
+                    <td align="left" style="background-color: white;padding: 0.5rem 1rem;border: 1px solid black">Nombre:</td>
+                    <td align="left" style="background-color: white;padding: 0.5rem 1rem;border: 1px solid black">'.$nombre.'</td>
+                </tr>
+                <tr>
+                    <td align="left" style="background-color: white;padding: 0.5rem 1rem;border: 1px solid black">Teléfono:</td>
+                    <td align="left" style="background-color: white;padding: 0.5rem 1rem;border: 1px solid black">'.$tel.'</td>
+                </tr>
+                <tr>
+                    <td align="left" style="background-color: white;padding: 0.5rem 1rem;border: 1px solid black">Correo Electrónico:</td>
+                    <td align="left" style="background-color: white;padding: 0.5rem 1rem;border: 1px solid black">'.$email.'</td>
+                </tr>
+                <tr>
+                    <td align="left" style="background-color: white;padding: 0.5rem 1rem;border: 1px solid black">Consulta:</td>
+                    <td align="left" style="background-color: white;padding: 0.5rem 1rem;border: 1px solid black">'.$mensaje.'</td>
+                </tr>
+            </table>
 
-</body> 
-</html>
-';
+            <p>Gracias por escribirnos.</p>
+            <p>Equipo de Panadería Agianga</p>
+            <a href="'.$_ENV['RUTA'].'/'.$lang.'">'.$_ENV['RUTA'].'/'.$lang.'</a>
+            
+        </body> 
+        </html>
+        ';
+        break;
+    case 'eu':
+        $asunto = "Zure mezua jaso dugu, $nombre - Aginagako Okindegia";
+        $cuerpo='
+        <!DOCTYPE html>
+        <html lang="eu">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>'.$asunto.'</title>
+        </head>
+        <body align="center" style="padding: 1.5rem;background-color: rgb(255, 227, 227);">
+            <h1>Zure mezua jaso dugu, '.$nombre.'</h1>
+            <p>Hona hemen webgunean jaso ditugun datuak zure kontsultari buruz:</p>
+            <table align="center">
+                <tr>
+                    <td align="left" style="background-color: white;padding: 0.5rem 1rem;border: 1px solid black">Izena:</td>
+                    <td align="left" style="background-color: white;padding: 0.5rem 1rem;border: 1px solid black">'.$nombre.'</td>
+                </tr>
+                <tr>
+                    <td align="left" style="background-color: white;padding: 0.5rem 1rem;border: 1px solid black">Telefonoa:</td>
+                    <td align="left" style="background-color: white;padding: 0.5rem 1rem;border: 1px solid black">'.$tel.'</td>
+                </tr>
+                <tr>
+                    <td align="left" style="background-color: white;padding: 0.5rem 1rem;border: 1px solid black">Posta elektronikoa:</td>
+                    <td align="left" style="background-color: white;padding: 0.5rem 1rem;border: 1px solid black">'.$email.'</td>
+                </tr>
+                <tr>
+                    <td align="left" style="background-color: white;padding: 0.5rem 1rem;border: 1px solid black">Kontsulta:</td>
+                    <td align="left" style="background-color: white;padding: 0.5rem 1rem;border: 1px solid black">'.$mensaje.'</td>
+                </tr>
+            </table>
+
+            <p>Eskerrik asko idazteagatik.</p>
+            <p>Aginagako Okindegi taldea</p>
+            <a href="'.$_ENV['RUTA'].'/'.$lang.'">'.$_ENV['RUTA'].'/'.$lang.'</a>
+
+        </body>
+        </html>
+        ';
+        break;
+    default:
+        
+        break;
+}
+
 include "./envioPhpMailer.php"; //necesite ejecutar el envío de correo.
 
 
@@ -173,6 +222,10 @@ $cuerpo='
             <td align="left" style="background-color: white;padding: 0.5rem 1rem;border: 1px solid black">Url desde la que ha escrito el form:</td>
             <td align="left" style="background-color: white;padding: 0.5rem 1rem;border: 1px solid black">'.$url.'</td>
         </tr>
+        <tr>
+            <td align="left" style="background-color: white;padding: 0.5rem 1rem;border: 1px solid black">Idioma usado por el cliente</td>
+            <td align="left" style="background-color: white;padding: 0.5rem 1rem;border: 1px solid black">'.$lang.'</td>
+        </tr>
     </table>
 
     <p>Un saludo</p>
@@ -187,7 +240,19 @@ include "./envioPhpMailer.php";
 
 
 // 05 Redirección a la página de gracias.php
-header('location:'.$_ENV["RUTA"].'/es/gracias?nombre='.$nombre);
+
+
+switch ($lang){
+    case 'es':
+        header('location:'.$_ENV["RUTA"].'/es/gracias?nombre='.$nombre);
+        die;
+    case 'eu':
+        header('location:'.$_ENV["RUTA"].'/eu/eskerrikasko?nombre='.$nombre);
+        die;
+    default:
+        header('location:'.$_ENV["RUTA"].'/es/gracias?nombre='.$nombre);
+        die;
+}
 
 
 

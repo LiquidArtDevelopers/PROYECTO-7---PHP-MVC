@@ -80,7 +80,7 @@
 
                     <span class="error"><?php if( isset($campo) && $campo == "email"){echo "Errorea dago $campo eremuan, mota: $error";} ?></span>
                     <label for="email">Emaila *</label>
-                    <input type="email" class='<?php if(isset($campo) && $campo == "email"){ echo "inputError";} ?>' name="email" id="email" placeholder="* Posta elektronikoa" value="<?php if(isset($email)){echo $email;}?>"
+                    <input type="email" class='<?php if(isset($campo) && $campo == "email"){ echo "inputError";} ?>' name="email" id="email" placeholder="* Posta elektronikoa" value="<?php if(isset($email)){echo $email;}?>">
 
                     <span class="error"><?php if( isset($campo) && $campo == "mensaje"){echo "Errorea dago $campo eremuan, mota: $error";} ?></span>
                     <label for="mensaje">Iruzkinak</label>
