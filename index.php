@@ -35,6 +35,7 @@ $url = parse_url($request, PHP_URL_PATH) ?? '/'.$_ENV['LANG_DEFAULT'];
 
 
 
+
 // Compruebo que $url no sea un "/", sino que sea otras url como "/es/contacto"
 if ($url != "/") {
     // quito la "/" del final en caso de que la tenga
@@ -46,8 +47,11 @@ if ($url != "/") {
     // Ejemplo si fuese $url "/es", entonces el array sería ["", "es"]
     $urlParse = explode("/", $url);
     // Metemos dentro de $lang, el valor del array enb la posición 1, que es donde está el idioma. El arrat cuenta sus items empezando desde el 0, por lo tanto en el array ["", "es", "contacto"], la posición 1 es "es"
+
+    // Para un caso en producción o desarrollo donde el stack no esté dentro de una carpeta adicional, usamos esto:
     $lang = $urlParse[1];
 
+    
     // Obtener $lang me sirve para determinar en qué carpeta tengo que buscar $view, que es la vista del contenido que se cargará.
 } else {
     // Si la ruta termina viene vacía como "/", redirigimos a la ruta principal con el idioma principal para que venga como "/es"
