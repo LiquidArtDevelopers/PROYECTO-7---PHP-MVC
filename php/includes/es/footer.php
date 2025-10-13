@@ -10,8 +10,8 @@
 
         <div class="cajaInfo">
             <ul>
-                <li><a href="">Página de interés de Área</a></li>
-                <li><a href="">Página de interés 2</a></li>
+                <li><a href="https://profe.webda.eus/" title="Porfolio general">Porfolio general</a></li>
+                <li><a href="https://www.areafor.com/" title="Academia Area">Academia Área</a></li>
             </ul>
             <div class="rrss">
                 <a href="" title="Facebook de la [empresa]" target="_blank">

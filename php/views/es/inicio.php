@@ -37,7 +37,6 @@
     </header>
 
     <main>
-
         <!-- SECCIÓN PRESENTACIÓN -->
         <section class="sect01">
             <div class="h2Especial">
