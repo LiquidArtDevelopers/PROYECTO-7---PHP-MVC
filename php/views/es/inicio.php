@@ -101,7 +101,7 @@
 
             <!-- artículo 05 -->
             <article class="art05">
-                <h3>Descubre la historia de nuestra panadería</h3>
+                <h3>Descubre la historia de nuestra panadería en Agiña</h3>
                 <p>Desde 1923, nuestra panadería ha sido el corazón de Aginaga, un lugar donde la tradición y la innovación se encuentran para crear productos excepcionales. Tres generaciones de maestros panaderos han mantenido vivo el arte de la panadería artesanal.</p>
                 <p>Te invitamos a conocer más sobre nuestra historia, nuestro equipo y la pasión que ponemos en cada producto que elaboramos. Descubre cómo hemos evolucionado manteniendo la esencia de lo artesanal.</p>
                 <a href="<?=$_ENV['RUTA']?>/es/sobre-nosotros" class="boton">Conoce nuestra historia</a>
