@@ -109,6 +109,14 @@
                 <img src="<?=$_ENV['RUTA']?>/assets/img/vistas/inicio/panaderas-profesionales-1500.avif" alt="Aginagako okinen taldea lantegian lanean" title="Aginagako okinen taldea">
 
             </article>
+
+            <!-- artículo 05 -->
+            <article class="art05">
+                <h3>Ezagutu gure okindegiaren historia</h3>
+                <p>1923tik, gure okindegia Aginagaren bihotza izan da, tradizioaren eta berrikuntzaren arteko topaketa salbuespenezko produktuak sortzeko. Hiru belaunaldiko okin maisuek bizirik mantendu dute okintza artisauaren artea.</p>
+                <p>Gonbidatzen zaitugu gure historia, gure taldea eta egiten dugun produktu bakoitzean jartzen dugun pasioa hobeto ezagutzera. Ezagutu nola eboluzionatu dugun artisauaren esentzia mantenduz.</p>
+                <a href="<?=$_ENV['RUTA']?>/eu/guri-buruz" class="boton" title="Ezagutu gure historia">Ezagutu gure historia</a>
+            </article>
         </section>
 
         <!-- SECCIÓN PRODUCTOS -->

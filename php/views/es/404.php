@@ -18,7 +18,6 @@
 
 </head>
 <body>
-    
     <main>
         <img src="<?=$_ENV['RUTA']?>/assets/img/logos/panaderia-aginaga-logo.svg" alt="Panadería Aginaga" title="Panadería Aginaga">
         <h1>404 - Página no encontrada</h1>

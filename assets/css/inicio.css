@@ -639,6 +639,24 @@ footer #zonaTerminos {
   }
 }
 
+.art05 {
+  width: 100%;
+  padding: 0 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  row-gap: 3rem;
+}
+@media only screen and (min-width: 800px) {
+  .art05 {
+    width: 40%;
+    min-width: 600px;
+    row-gap: 4rem;
+    padding: initial;
+  }
+}
+
 header {
   background-image: url("../img/vistas/inicio/panaderia-pasteleria-aginaga-1500.avif");
   background-repeat: no-repeat;

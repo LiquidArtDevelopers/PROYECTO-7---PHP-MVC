@@ -1,7 +1,7 @@
 <?php
 
 // zona de variables de entorno
-require_once './vendor/autoload.php';
+require_once __DIR__.'/vendor/autoload.php';
 use Dotenv\Dotenv;
 $dotenv = Dotenv::createImmutable('./');
 $dotenv->load();
@@ -19,18 +19,26 @@ require_once "./php/config/config.php";
 // FASE 2 - COMO TODAS LAS PETICIONES LLEGAN AL INDEX.PHP (POR ACCIÓN DEL HTACCESS), AQUÍ ANALIZAMOS LA URL POR LA QUE VIENE PARA VER SI ES VÁLIDA O NO Y EN CASO DE SER VÁLIDA, CARGARLE LA VISTA (VIEW) ASIGNADA A ESA URL EN EL ARRAY.
 // EN ESTA FASE 2 ANALIZAMOS LA URL POR LA QUE EL USUARIO VIENE, Y EXTRAEMOS EL LENGUAJE EN $lang Y LA RUTA AMIGABLE EN $url, SIENDO ESTAS DOS VARIABLES NECESARIAS PARA LA FASE 3
 
+
+
 //Obtenemos la url entera desde la raiz
-// Ejemplo: "/es/contacto?id=10"    
-$request = urldecode($_SERVER["REQUEST_URI"]) ?? '/es';
+// Ejemplo: "/es/contacto?id=10"
+// Nullish coalescing operator (??)
+$request = urldecode($_SERVER["REQUEST_URI"]) ?? '/'.$_ENV['LANG_DEFAULT']; 
+
+
 
 // Extraemos únicamente el path para ignorar los parámetros de consulta
 // ejemplo: "/es/contacto"
-$url = parse_url($request, PHP_URL_PATH) ?? "/es";
+$url = parse_url($request, PHP_URL_PATH) ?? '/'.$_ENV['LANG_DEFAULT'];
+
+
+
 
 // Compruebo que $url no sea un "/", sino que sea otras url como "/es/contacto"
 if ($url != "/") {
     // quito la "/" del final en caso de que la tenga
-    // Ejemplo: Si $url es "/es/contacto/" me quita "/" del final, es decir, me dehja $url en "/es/contacto"
+    // Ejemplo: Si $url es "/es/contacto/" me quita "/" del final, es decir, me deja $url en "/es/contacto"
     $url = rtrim($url, "/");
     // De $url me divide y extrae todos los valores teniendo la "/" como divisor.
     // Ejemplo: en $urlParse tengo un array con estos valores ["", "es", "contacto"] ya que $url es "/es/contacto"
@@ -44,16 +52,20 @@ if ($url != "/") {
 } else {
     // Si la ruta termina viene vacía como "/", redirigimos a la ruta principal con el idioma principal para que venga como "/es"
     header("HTTP/1.1 301 Moved Permanently");
-    header("Location: /es");
+    $idioma = $_ENV['LANG_DEFAULT'];
+    header("Location: /$idioma");
     exit;
 }
 
+
+
 // Una barrera para contener que si el usuario ha metido a mano o la url viene con un $lang que no se contempla en el array, le redirijamos a la página de inicio, pero con el idioma que queramos por defecto,
-if (!in_array($lang, $langs)) {
-    header("HTTP/1.1 301 Moved Permanently");
-    header("Location: /es");
-    exit;
-}
+// if (!in_array($lang, $langs)) {
+//     header("HTTP/1.1 301 Moved Permanently");
+//     $idioma = $_ENV['LANG_DEFAULT'];
+//     header("Location: /$idioma");
+//     exit;
+// }
 
 // FASE 3 - UNA VEZ TENEMOS LA $URL DEL USUARIO, Y TENEMOS EL IDIOMA DE LA URL EN $LANG, COMPROBAMOS SI EXISTE ESA URL EN ESE IDIOMA CONSULTANDO EL ARRAY DE URL
 if (isset($arrayRutasGet[$lang][$url])) {
@@ -74,6 +86,10 @@ if (isset($arrayRutasGet[$lang][$url])) {
 
     // En caso de que $url no exista dentro del array de url permitidas, cargamos el contenido de la 404
     //----VISTA----------
+
+    if (!in_array($lang, $langs)) {
+        $lang = $_ENV['LANG_DEFAULT'];
+    }
     http_response_code(404);
     require_once __DIR__ . "/php/views/$lang/404.php";
 
