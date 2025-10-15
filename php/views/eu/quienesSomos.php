@@ -11,7 +11,7 @@
     <link rel="canonical" href="<?=$_ENV['RUTA']?>/eu/sobre-nosotros">
 
     <!-- Indexación y autoridad-->
-    <meta name="robots" data-lang="robots" content="follow, index, max-snippet:-1, max-video-preview:-1, max-image-preview:large">
+    <meta name="robots" data-lang="robots" content="nofollow, noindex">
     <meta name="referrer" content="origin">
 
     <?php

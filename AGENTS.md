@@ -1,0 +1,1 @@
+Quiero que en cada petición que te haga, añadas dentro del log.txt un registro más con el texto de la petición.

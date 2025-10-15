@@ -16,7 +16,7 @@
     <link rel="canonical" href="<?=$_ENV['RUTA']?>/eu/eskerrik-asko">
 
     <!-- Indexación y autoridad-->
-    <meta name="robots" data-lang="robots" content="nofollow, noindex, max-snippet:-1, max-video-preview:-1, max-image-preview:large">
+    <meta name="robots" data-lang="robots" content="nofollow, noindex">
     <meta name="referrer" content="origin">
 
 
