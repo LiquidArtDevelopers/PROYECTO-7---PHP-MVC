@@ -27,6 +27,11 @@
 
 <body>
 
+    <?php
+    // Elementos globales dentro del body: script de tag manager
+    include './php/includes/eu/body_global.php'
+    ?>
+
     <!-- NAV -->
     <?php include './php/includes/eu/nav.php' ?>
 

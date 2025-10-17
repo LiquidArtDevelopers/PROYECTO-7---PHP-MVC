@@ -50,7 +50,6 @@ if ($url != "/") {
 
     // Para un caso en producción o desarrollo donde el stack no esté dentro de una carpeta adicional, usamos esto:
     $lang = $urlParse[1];
-
     
     // Obtener $lang me sirve para determinar en qué carpeta tengo que buscar $view, que es la vista del contenido que se cargará.
 } else {

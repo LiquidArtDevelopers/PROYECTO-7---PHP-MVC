@@ -6,6 +6,8 @@
         <lastmod>2025-10-15</lastmod>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://stack-profe.webda.eus/es"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://stack-profe.webda.eus/es"/>
         <xhtml:link rel="alternate" hreflang="eu" href="https://stack-profe.webda.eus/eu"/>
     </url>
     <url>
@@ -13,6 +15,8 @@
         <lastmod>2025-10-15</lastmod>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://stack-profe.webda.eus/eu"/>
+        <xhtml:link rel="alternate" hreflang="eu" href="https://stack-profe.webda.eus/eu"/>
         <xhtml:link rel="alternate" hreflang="es" href="https://stack-profe.webda.eus/es"/>
     </url>
     <url>
@@ -20,6 +24,8 @@
         <lastmod>2025-10-15</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.9</priority>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://stack-profe.webda.eus/es/productos"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://stack-profe.webda.eus/es/productos"/>
         <xhtml:link rel="alternate" hreflang="eu" href="https://stack-profe.webda.eus/eu/produktuak"/>
     </url>
     <url>
@@ -27,6 +33,8 @@
         <lastmod>2025-10-15</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.9</priority>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://stack-profe.webda.eus/eu/produktuak"/>
+        <xhtml:link rel="alternate" hreflang="eu" href="https://stack-profe.webda.eus/eu/produktuak"/>
         <xhtml:link rel="alternate" hreflang="es" href="https://stack-profe.webda.eus/es/productos"/>
     </url>
     <url>
@@ -34,6 +42,8 @@
         <lastmod>2025-10-15</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://stack-profe.webda.eus/es/quienes-somos"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://stack-profe.webda.eus/es/quienes-somos"/>
         <xhtml:link rel="alternate" hreflang="eu" href="https://stack-profe.webda.eus/eu/nor-gara"/>
     </url>
     <url>
@@ -41,6 +51,8 @@
         <lastmod>2025-10-15</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://stack-profe.webda.eus/eu/nor-gara"/>
+        <xhtml:link rel="alternate" hreflang="eu" href="https://stack-profe.webda.eus/eu/nor-gara"/>
         <xhtml:link rel="alternate" hreflang="es" href="https://stack-profe.webda.eus/es/quienes-somos"/>
     </url>
     <url>
@@ -48,6 +60,8 @@
         <lastmod>2025-10-15</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://stack-profe.webda.eus/es/contacto"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://stack-profe.webda.eus/es/contacto"/>
         <xhtml:link rel="alternate" hreflang="eu" href="https://stack-profe.webda.eus/eu/kontaktua"/>
     </url>
     <url>
@@ -55,6 +69,8 @@
         <lastmod>2025-10-15</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://stack-profe.webda.eus/eu/kontaktua"/>
+        <xhtml:link rel="alternate" hreflang="eu" href="https://stack-profe.webda.eus/eu/kontaktua"/>
         <xhtml:link rel="alternate" hreflang="es" href="https://stack-profe.webda.eus/es/contacto"/>
     </url>
     <url>
@@ -62,6 +78,8 @@
         <lastmod>2025-10-15</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.5</priority>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://stack-profe.webda.eus/es/terminos-y-condiciones"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://stack-profe.webda.eus/es/terminos-y-condiciones"/>
         <xhtml:link rel="alternate" hreflang="eu" href="https://stack-profe.webda.eus/eu/lege-baldintzak"/>
     </url>
     <url>
@@ -69,6 +87,8 @@
         <lastmod>2025-10-15</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.5</priority>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://stack-profe.webda.eus/eu/lege-baldintzak"/>
+        <xhtml:link rel="alternate" hreflang="eu" href="https://stack-profe.webda.eus/eu/lege-baldintzak"/>
         <xhtml:link rel="alternate" hreflang="es" href="https://stack-profe.webda.eus/es/terminos-y-condiciones"/>
     </url>
 </urlset>

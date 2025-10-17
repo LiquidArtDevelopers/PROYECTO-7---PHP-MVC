@@ -18,6 +18,11 @@
 
 </head>
 <body>
+
+    <?php
+    // Elementos globales dentro del body: script de tag manager
+    include './php/includes/eu/body_global.php'
+    ?>
     
     <main>
         <img src="<?=$_ENV['RUTA']?>/assets/img/logos/panaderia-aginaga-logo.svg" alt="Aginagako Okindegia" title="Aginagako Okindegia">
