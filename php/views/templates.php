@@ -21,6 +21,96 @@
     </header>
 
     <main>
+        
+
+        <!-- Sección 01 -->
+        <section class="sect01">
+            <div class="h2Especial">
+                <span></span>
+                <h2>Encabezado h2 de la sect01</h2>
+            </div>
+            <article>
+                <!-- hijo 1 -->
+                <div>
+                    <h3>Encabezado h3</h3>
+                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repudiandae vitae amet rem earum maiores similique provident dolorem sunt odit sequi. Lorem ipsum dolor sit, amet consectetur adipisicing elit. </p>
+                    <span></span>
+                    <div class="cards">
+                        <div class="card">
+                            <img src="https://dummyimage.com/40x40" alt="">
+                            <h4>Encabezado h4</h4>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat iusto ipsam quam porro, rem non nulla distinctio eligendi id possimus.</p>
+                            <a href="" class="moduloBoton01">
+                                <span>Leer más</span>
+                                <img src="<?=$_ENV['RUTA']?>/assets/img/system/arrow-forward-outline.svg" alt="" title="">
+                            </a>
+                        </div>
+                        <div class="card">
+                            <img src="https://dummyimage.com/40x40" alt="">
+                            <h4>Encabezado h4</h4>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat iusto ipsam quam porro, rem non nulla distinctio eligendi id possimus.</p>
+                            <a href="" class="moduloBoton01">
+                                <span>Leer más</span>
+                                <img src="<?=$_ENV['RUTA']?>/assets/img/system/arrow-forward-outline.svg" alt="" title="">
+                            </a>
+                        </div>
+                    </div>
+                    <a href="" class="moduloBoton02">
+                        <span>Contacta con nosotros</span>
+                        <img src="<?=$_ENV['RUTA']?>/assets/img/system/arrow-forward-outline.svg" alt="" title="">
+                    </a>
+                </div>
+                <!-- hijo 2 -->
+                <div>
+                    <img src="https://dummyimage.com/1000x1500" alt="">
+                </div>
+            </article>
+        </section>
+
+
+        <!-- Sección sect02 -->
+        <section class="sect02"> 
+            <div class="h2Especial">
+                <span></span>
+                <h2>Encabezado h2 de la sect02</h2>
+            </div>
+            <div class="sect02-content">
+                <ul>
+                    <li>
+                        <a href="tel:+34943123123" title="Llámanos al 943 123 123" target="_blank">
+                            <img src="<?=$_ENV['RUTA']?>/assets/img/system/call.svg" alt="Llámanos al 943 123 123" title="Llámanos al 943 123 123" width="20" height="20"> 
+                            <span>943 123 123</span>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="https://api.whatsapp.com/send/?phone=34628749350" title="Escríbenos al whatsapp 600 123 123" target="_blank">
+                            <img src="<?=$_ENV['RUTA']?>/assets/img/system/logo-whatsapp.svg" alt="Escríbenos al whatsapp 600 123 123" title="Escríbenos al whatsapp 600 123 123" width="20" height="20"> 
+                            <span>600 123 123</span>
+                        </a>
+                    </li>       
+
+                    <li>
+                        <a href="mailto:aranaz@gmail.com" title="Mándanos un correo a la siguiente dirección correo@correo.com" target="_blank">
+                            <img src="<?=$_ENV['RUTA']?>/assets/img/system/mail.svg" alt="Mándanos un correo a la siguiente dirección correo@correo.com" title="Mándanos un correo a la siguiente dirección correo@correo.com" width="20" height="20"> 
+                            <span>correo@correo.com</span>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="https://maps.app.goo.gl/EB3bPiGW1yfoJg3p9" title="Estamos en Donostia en la dirección Paseo Portuetxe 23b, 413 Donostia" target="_blank">
+                            <img src="<?=$_ENV['RUTA']?>/assets/img/system/location.svg" alt="Estamos en Donostia en la dirección Paseo Portuetxe 23b, 413 Donostia" title="Estamos en Donostia en la dirección Paseo Portuetxe 23b, 413 Donostia" width="20" height="20"> 
+                            <span>Paseo Portuetxe 23b<br>413 Donostia</span>
+                        </a>
+                    </li>
+
+                    
+                </ul>
+
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d10923.690028247327!2d-2.0104242426659686!3d43.296692429058076!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd51b013f0513629%3A0x57e4ff3311f619d9!2s%C3%81rea%20Escuela%20de%20Dise%C3%B1o%20y%20Nuevas%20Tecnolog%C3%ADas!5e1!3m2!1ses!2ses!4v1749486263845!5m2!1ses!2ses" width="100%" height="auto" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </section>
+
         <section>
             <!-- H2 especial -->
             <div class="h2Especial">
@@ -41,7 +131,6 @@
                     </a>
                 </div>
             </article>
-
 
             <!-- Artículo 02 -->
             <article class="art02">
@@ -91,54 +180,6 @@
                 </div>
             </article>
 
-        </section>
-
-        <!-- Sección 01 -->
-        <section class="sect01">
-            <div class="h2Especial">
-                <span></span>
-                <h2>Encabezado h2 de la sect01</h2>
-            </div>
-            <article>
-                <!-- hijo 1 -->
-                <div>
-                    <h3>Encabezado h3</h3>
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repudiandae vitae amet rem earum maiores similique provident dolorem sunt odit sequi. Lorem ipsum dolor sit, amet consectetur adipisicing elit. </p>
-                    <span></span>
-                    <div class="cards">
-                        <div class="card">
-                            <img src="https://dummyimage.com/40x40" alt="">
-                            <h4>Encabezado h4</h4>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat iusto ipsam quam porro, rem non nulla distinctio eligendi id possimus.</p>
-                            <a href="" class="moduloBoton01">
-                                <span>Leer más</span>
-                                <img src="<?=$_ENV['RUTA']?>/assets/img/system/arrow-forward-outline.svg" alt="" title="">
-                            </a>
-                        </div>
-                        <div class="card">
-                            <img src="https://dummyimage.com/40x40" alt="">
-                            <h4>Encabezado h4</h4>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat iusto ipsam quam porro, rem non nulla distinctio eligendi id possimus.</p>
-                            <a href="" class="moduloBoton01">
-                                <span>Leer más</span>
-                                <img src="<?=$_ENV['RUTA']?>/assets/img/system/arrow-forward-outline.svg" alt="" title="">
-                            </a>
-                        </div>
-                    </div>
-                    <a href="" class="moduloBoton02">
-                        <span>Contacta con nosotros</span>
-                        <img src="<?=$_ENV['RUTA']?>/assets/img/system/arrow-forward-outline.svg" alt="" title="">
-                    </a>
-                </div>
-                <!-- hijo 2 -->
-                <div>
-                    <img src="https://dummyimage.com/1000x1500" alt="">
-                </div>
-            </article>
-        </section>
-
-        <!-- Sección para el art03 -->
-        <section>
             <!-- Artículo 03 -->
             <article class="art03">
                 
@@ -151,10 +192,59 @@
                 <img src="https://dummyimage.com/1500x900" alt="" title="">
 
             </article>
-        </section>
 
-        
-        <section>
+            <!-- artículo 4 -->
+            <article class="art04">
+                <h3>ARTÍCULO art04</h3>
+                <span class="ralla"></span>
+                <div class="contenedor-fichas">
+                    <div class="ficha">
+                        <h4>Encabezado h4</h4>
+                        <img src="https://dummyimage.com/90x90" alt="" title="">                        
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore libero exercitationem omnis quod placeat cumque nobis aspernatur illo! Accusamus, labore.</p>
+                        <span class="ralla"></span>
+                    </div>
+
+                    <div class="ficha">
+                        <h4>Encabezado h4</h4>
+                        <img src="https://dummyimage.com/90x90" alt="" title="">                        
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore libero exercitationem omnis quod placeat cumque nobis aspernatur illo! Accusamus, labore.</p>
+                        <span class="ralla"></span>
+                    </div>
+
+                    <div class="ficha">
+                        <h4>Encabezado h4</h4>
+                        <img src="https://dummyimage.com/90x90" alt="" title="">                        
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore libero exercitationem omnis quod placeat cumque nobis aspernatur illo! Accusamus, labore.</p>
+                        <span class="ralla"></span>
+                    </div>
+
+                    <div class="ficha">
+                        <h4>Encabezado h4</h4>
+                        <img src="https://dummyimage.com/90x90" alt="" title="">                        
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore libero exercitationem omnis quod placeat cumque nobis aspernatur illo! Accusamus, labore.</p>
+                        <span class="ralla"></span>
+                    </div>
+                </div>
+            </article>
+
+            <!-- artículo 05 -->
+            <article class="art05">
+                <h3>Encabezado art05</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis porro libero doloribus necessitatibus explicabo nostrum, itaque excepturi reprehenderit magni alias.</p>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Et qui laboriosam voluptas, maxime possimus ab dolor aliquam nobis repellendus voluptatem vero sed explicabo totam quaerat dolores veritatis fuga quibusdam cumque.</p>
+                <a href="" class="boton">CTA</a>
+            </article>
+
+            <!-- artículpo 06 -->
+            <article class="art06">
+                <div>
+                    <h3>Artículo 06 </h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit dolorem soluta molestiae autem ipsam deleniti adipisci. Eius adipisci quo, quae officia quod rerum sequi, aliquid autem perspiciatis deleniti, laudantium nihil.</p>
+                    <a href="#" title="" class="boton">CTA</a>
+                </div>     
+            </article>
+
             <!-- artForm -->
             <article class="artForm">
                 <h3>Formulario de contacto</h3>
@@ -206,101 +296,11 @@
                 </form>
 
             </article>
-        </section>
-
-        <!-- Sección sect02 -->
-        <section class="sect02"> 
-            <div class="h2Especial">
-                <span></span>
-                <h2>Encabezado h2 de la sect02</h2>
-            </div>
-            <div class="sect02-content">
-                <ul>
-                    <li>
-                        <a href="tel:+34943123123" title="Llámanos al 943 123 123" target="_blank">
-                            <img src="<?=$_ENV['RUTA']?>/assets/img/system/call.svg" alt="Llámanos al 943 123 123" title="Llámanos al 943 123 123" width="20" height="20"> 
-                            <span>943 123 123</span>
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="https://api.whatsapp.com/send/?phone=34628749350" title="Escríbenos al whatsapp 600 123 123" target="_blank">
-                            <img src="<?=$_ENV['RUTA']?>/assets/img/system/logo-whatsapp.svg" alt="Escríbenos al whatsapp 600 123 123" title="Escríbenos al whatsapp 600 123 123" width="20" height="20"> 
-                            <span>600 123 123</span>
-                        </a>
-                    </li>       
-
-                    <li>
-                        <a href="mailto:aranaz@gmail.com" title="Mándanos un correo a la siguiente dirección correo@correo.com" target="_blank">
-                            <img src="<?=$_ENV['RUTA']?>/assets/img/system/mail.svg" alt="Mándanos un correo a la siguiente dirección correo@correo.com" title="Mándanos un correo a la siguiente dirección correo@correo.com" width="20" height="20"> 
-                            <span>correo@correo.com</span>
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="https://maps.app.goo.gl/EB3bPiGW1yfoJg3p9" title="Estamos en Donostia en la dirección Paseo Portuetxe 23b, 413 Donostia" target="_blank">
-                            <img src="<?=$_ENV['RUTA']?>/assets/img/system/location.svg" alt="Estamos en Donostia en la dirección Paseo Portuetxe 23b, 413 Donostia" title="Estamos en Donostia en la dirección Paseo Portuetxe 23b, 413 Donostia" width="20" height="20"> 
-                            <span>Paseo Portuetxe 23b<br>413 Donostia</span>
-                        </a>
-                    </li>
-
-                    
-                </ul>
-
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d10923.690028247327!2d-2.0104242426659686!3d43.296692429058076!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd51b013f0513629%3A0x57e4ff3311f619d9!2s%C3%81rea%20Escuela%20de%20Dise%C3%B1o%20y%20Nuevas%20Tecnolog%C3%ADas!5e1!3m2!1ses!2ses!4v1749486263845!5m2!1ses!2ses" width="100%" height="auto" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-            </div>
-        </section>
-
-        
-        <section>
-            <!-- artículo 4 -->
-            <article class="art04">
-                <h3>ARTÍCULO art04</h3>
-                <span class="ralla"></span>
-                <div class="contenedor-fichas">
-                    <div class="ficha">
-                        <h4>Encabezado h4</h4>
-                        <img src="https://dummyimage.com/90x90" alt="" title="">                        
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore libero exercitationem omnis quod placeat cumque nobis aspernatur illo! Accusamus, labore.</p>
-                        <span class="ralla"></span>
-                    </div>
-
-                    <div class="ficha">
-                        <h4>Encabezado h4</h4>
-                        <img src="https://dummyimage.com/90x90" alt="" title="">                        
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore libero exercitationem omnis quod placeat cumque nobis aspernatur illo! Accusamus, labore.</p>
-                        <span class="ralla"></span>
-                    </div>
-
-                    <div class="ficha">
-                        <h4>Encabezado h4</h4>
-                        <img src="https://dummyimage.com/90x90" alt="" title="">                        
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore libero exercitationem omnis quod placeat cumque nobis aspernatur illo! Accusamus, labore.</p>
-                        <span class="ralla"></span>
-                    </div>
-
-                    <div class="ficha">
-                        <h4>Encabezado h4</h4>
-                        <img src="https://dummyimage.com/90x90" alt="" title="">                        
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore libero exercitationem omnis quod placeat cumque nobis aspernatur illo! Accusamus, labore.</p>
-                        <span class="ralla"></span>
-                    </div>
-                </div>
-            </article>
-
-            <!-- artículo 05 -->
-            <article class="art05">
-                <h3>Encabezado art05</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis porro libero doloribus necessitatibus explicabo nostrum, itaque excepturi reprehenderit magni alias.</p>
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Et qui laboriosam voluptas, maxime possimus ab dolor aliquam nobis repellendus voluptatem vero sed explicabo totam quaerat dolores veritatis fuga quibusdam cumque.</p>
-                <a href="" class="boton">CTA</a>
-            </article>
 
         </section>
 
 
-
-        
+               
     </main>
 
     <!-- FOOTER -->
