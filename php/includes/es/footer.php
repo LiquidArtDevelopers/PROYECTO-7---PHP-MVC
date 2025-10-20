@@ -35,14 +35,14 @@
         <div class="cajaInfo">
             <ul>
                 <li>
-                    <a href="tel:+34943123123" title="Llámanos al 943 123 123" target="_blank">
+                    <a href="tel:+34943123123" title="Llámanos al 943 123 123" target="_blank" class="telefono">
                         <img src="<?=$_ENV['RUTA']?>/assets/img/system/call.svg" alt="Llámanos al 943 123 123" title="Llámanos al 943 123 123" width="20" height="20">
                         <span>943 123 123</span>
                     </a>
                 </li>
 
                 <li>
-                    <a href="https://api.whatsapp.com/send/?phone=34628749350" title="Escríbenos al WhatsApp 600 123 123" target="_blank">
+                    <a href="https://api.whatsapp.com/send/?phone=34628749350" title="Escríbenos al WhatsApp 600 123 123" target="_blank" class="telefono">
                         <img src="<?=$_ENV['RUTA']?>/assets/img/system/logo-whatsapp.svg" alt="Escríbenos al WhatsApp 600 123 123" title="Escríbenos al WhatsApp 600 123 123" width="20" height="20">
                         <span>600 123 123</span>
                     </a>

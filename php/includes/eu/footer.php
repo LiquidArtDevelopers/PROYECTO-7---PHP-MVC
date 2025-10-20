@@ -35,14 +35,14 @@
         <div class="cajaInfo">
             <ul>
                 <li>
-                    <a href="tel:+34943123123" title="Deitu iezaguzu 943 123 123 zenbakira" target="_blank">
+                    <a href="tel:+34943123123" title="Deitu iezaguzu 943 123 123 zenbakira" target="_blank" class="telefono">
                         <img src="<?=$_ENV['RUTA']?>/assets/img/system/call.svg" alt="Deitu iezaguzu 943 123 123 zenbakira" title="Deitu iezaguzu 943 123 123 zenbakira" width="20" height="20">
                         <span>943 123 123</span>
                     </a>
                 </li>
 
                 <li>
-                    <a href="https://api.whatsapp.com/send/?phone=34628749350" title="Idatzi iezaguzu WhatsApp bidez 600 123 123 zenbakira" target="_blank">
+                    <a href="https://api.whatsapp.com/send/?phone=34628749350" title="Idatzi iezaguzu WhatsApp bidez 600 123 123 zenbakira" target="_blank" class="telefono">
                         <img src="<?=$_ENV['RUTA']?>/assets/img/system/logo-whatsapp.svg" alt="Idatzi iezaguzu WhatsApp bidez 600 123 123 zenbakira" title="Idatzi iezaguzu WhatsApp bidez 600 123 123 zenbakira" width="20" height="20">
                         <span>600 123 123</span>
                     </a>
