@@ -19,6 +19,7 @@
     include './php/includes/eu/metadatos_globales.php';
     ?>
 </head>
+
 <body>
 
     <?php
