@@ -98,8 +98,6 @@
             </article>
         </section>
 
-
-
         <!-- SECCIÓN SOBRE NOSOTROS -->
         <section>
             <div class="h2Especial">
@@ -120,9 +118,21 @@
                 <h3>Ezagutu gure okindegiaren historia</h3>
                 <p>1923tik, gure okindegia Aginagaren bihotza izan da, tradizioaren eta berrikuntzaren arteko topaketa salbuespenezko produktuak sortzeko. Hiru belaunaldiko okin maisuek bizirik mantendu dute okintza artisauaren artea.</p>
                 <p>Gonbidatzen zaitugu gure historia, gure taldea eta egiten dugun produktu bakoitzean jartzen dugun pasioa hobeto ezagutzera. Ezagutu nola eboluzionatu dugun artisauaren esentzia mantenduz.</p>
-                <a href="<?=$_ENV['RUTA']?>/eu/guri-buruz" class="boton" title="Ezagutu gure historia">Ezagutu gure historia</a>
+                <a href="<?=$_ENV['RUTA']?>/eu/guri-buruz" class="boton">Ezagutu gure historia</a>
+            </article>
+
+            <!-- artículo 06 -->
+            <article class="art06">
+                <div>
+                    <h3>Aginagaren arima ahokada bakoitzean</h3>
+                    <p>Okindegi soil bat baino gehiago gara, auzokideek eguneko ogia aukeratzen duten bitartean istorioak partekatzen dituzten topagunea. Goizero gure kaleak betetzen dituen ogi berriaren usaina Aginagaren nortasunaren parte bihurtu da.</p>
+                    <p>Gure lantegia tradizioa bizirik dagoen espazioa da, pieza bakoitzak kontatzeko istorio bat duen lekua eta denborak bere bide naturala hartzen duen tokia. Esperientzia paregabe honen parte izatera gonbidatzen zaitugu, zergatik garen okindegi bat baino askoz gehiago zuzenean ezagutzera.</p>
+                    <a href="<?=$_ENV['RUTA']?>/eu/kontaktua" title="" class="boton">Etorri bisitan</a>
+                </div>
             </article>
         </section>
+
+        
 
         <!-- SECCIÓN PRODUCTOS -->
         <section>

@@ -46,6 +46,7 @@
                 <span></span>
                 <h2>Te presentamos tu panadería en Aginaga</h2>
             </div>
+
             <article>
                 <!-- hijo 1 -->
                 <div>
@@ -81,7 +82,7 @@
                 <div>
                     <img src="<?=$_ENV['RUTA']?>/assets/img/vistas/inicio/panaderia-pasteleria-aginaga-1500.avif" alt="" title="">
                 </div>
-            </article>
+            </article>            
         </section>
 
         <!-- SECCIÓN SOBRE NOSOTROS -->
@@ -103,10 +104,20 @@
 
             <!-- artículo 05 -->
             <article class="art05">
-                <h3>Descubre la historia de nuestra panadería en Agiña</h3>
+                <h3>Descubre la historia de nuestra panadería</h3>
                 <p>Desde 1923, nuestra panadería ha sido el corazón de Aginaga, un lugar donde la tradición y la innovación se encuentran para crear productos excepcionales. Tres generaciones de maestros panaderos han mantenido vivo el arte de la panadería artesanal.</p>
                 <p>Te invitamos a conocer más sobre nuestra historia, nuestro equipo y la pasión que ponemos en cada producto que elaboramos. Descubre cómo hemos evolucionado manteniendo la esencia de lo artesanal.</p>
                 <a href="<?=$_ENV['RUTA']?>/es/sobre-nosotros" class="boton">Conoce nuestra historia</a>
+            </article>
+
+            <!-- artículo 06 -->
+            <article class="art06">
+                <div>
+                    <h3>El alma de Aginaga en cada bocado</h3>
+                    <p>Más allá de ser una simple panadería, somos un punto de encuentro donde los vecinos comparten historias mientras eligen su pan diario. El aroma a pan recién horneado que inunda nuestras calles cada mañana se ha convertido en parte de la identidad de Aginaga.</p>
+                    <p>Nuestro obrador es un espacio donde la tradición cobra vida, donde cada pieza tiene una historia que contar y donde el tiempo se toma su curso natural. Te invitamos a formar parte de esta experiencia única, a conocer de primera mano por qué somos mucho más que una panadería.</p>
+                    <a href="<?=$_ENV['RUTA']?>/es/contacto" title="" class="boton">Ven a visitarnos</a>
+                </div>
             </article>
 
         </section>

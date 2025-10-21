@@ -239,7 +239,7 @@
             <!-- artículpo 06 -->
             <article class="art06">
                 <div>
-                    <h3>Artículo 06 </h3>
+                    <h3>Artículo 06 Lorem ipsum dolor sit. </h3>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit dolorem soluta molestiae autem ipsam deleniti adipisci. Eius adipisci quo, quae officia quod rerum sequi, aliquid autem perspiciatis deleniti, laudantium nihil.</p>
                     <a href="#" title="" class="boton">CTA</a>
                 </div>     
@@ -298,8 +298,6 @@
             </article>
 
         </section>
-
-
                
     </main>
 
