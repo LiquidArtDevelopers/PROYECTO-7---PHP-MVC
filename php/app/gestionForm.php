@@ -15,13 +15,13 @@ $nombre = $_POST['nombre'];
 $tel = $_POST['tel'];
 $email = $_POST['email'];
 $mensaje = $_POST['mensaje'];
-$terminos = $_POST['terminos'];
+$terminos = $_POST['terminos'] ?? null;
 
 $lang = $_POST['inputIdioma'];
 $url = $_POST['inputUrl'];
 
 $ip = $_SERVER['REMOTE_ADDR'];
-$fecha = date('Y-m-d h:m:s');
+$fecha = date('Y-m-d H:i:s');
 
 
 // // 02 Comprobación DEV (mostrarlos a través de echo para ver que vienen bien)
@@ -43,7 +43,7 @@ $fecha = date('Y-m-d h:m:s');
 // 03 Validaciones de campos
 
 // Validación de aceptación de términos
-if(empty($terminos)){    
+if(empty($terminos)){
     mensaje_error($lang, $_ENV['RUTA'],"terminos", "vacio", $nombre, $tel, $email, $mensaje);
 }
 
